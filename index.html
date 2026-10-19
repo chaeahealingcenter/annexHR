@@ -234,6 +234,13 @@ img{max-width:100%;display:block}
 
 /* ── 프로그램 4포맷 카드 ── */
 .formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+/* 5장이라 4칸 그리드에서 마지막 한 장이 혼자 떨어진다 — 6칸을 2칸씩 써서 3+2로 묶고 아랫줄을 가운데로 */
+@media (min-width:1000px){
+  .formats{grid-template-columns:repeat(6,1fr)}
+  .formats > .fmt{grid-column:span 2}
+  .formats > .fmt:nth-child(4){grid-column:2 / span 2}
+  .formats > .fmt:nth-child(5){grid-column:4 / span 2}
+}
 .fmt{
   background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius);
   display:flex;flex-direction:column;overflow:hidden;transition:border-color .18s, box-shadow .18s;
@@ -247,8 +254,8 @@ img{max-width:100%;display:block}
 .kv div{display:flex;gap:10px;font-size:13.5px;align-items:baseline}
 .kv dt{width:52px;flex:none;color:var(--muted);font-size:12.5px;margin:0}
 .kv dd{margin:0;color:var(--ink);font-weight:500}
-.price{font-size:18px;font-weight:600;letter-spacing:-.03em;color:var(--navy)}
-.fmt__acts{display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:4px}
+.price{font-size:18px;font-weight:600;letter-spacing:-.03em;color:var(--navy);margin-top:auto;padding-top:4px}
+.fmt__acts{display:flex;flex-direction:column;gap:8px;padding-top:2px}
 .fmt__acts .btn{width:100%;white-space:nowrap}
 
 /* ── 플래그십 ── */
