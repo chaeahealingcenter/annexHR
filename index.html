@@ -49,7 +49,7 @@
     "streetAddress":"입춘로 45 엔터비즈타워 B동 11층 1101호"
   },
   "areaServed":"KR",
-  "knowsAbout":["팀빌딩","조직문화","성격유형진단","MBTI 팀 커뮤니케이션","컬러 심리 진단","명상 힐링","컬러 아트테라피","컬러 보드게임","생성형 AI 직무교육"]
+  "knowsAbout":["팀빌딩","조직문화","성격유형진단","MBTI 팀 커뮤니케이션","컬러 심리 진단","명상 힐링","컬러 아트테라피","컬러 보드게임","생성형 AI 직무교육","종일 조합 워크숍"]
 }
 </script>
 <script type="application/ld+json">
@@ -235,12 +235,7 @@ img{max-width:100%;display:block}
 /* ── 프로그램 4포맷 카드 ── */
 .formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 /* 5장이라 4칸 그리드에서 마지막 한 장이 혼자 떨어진다 — 6칸을 2칸씩 써서 3+2로 묶고 아랫줄을 가운데로 */
-@media (min-width:1000px){
-  .formats{grid-template-columns:repeat(6,1fr)}
-  .formats > .fmt{grid-column:span 2}
-  .formats > .fmt:nth-child(4){grid-column:2 / span 2}
-  .formats > .fmt:nth-child(5){grid-column:4 / span 2}
-}
+@media (min-width:1000px){.formats{grid-template-columns:repeat(3,1fr)}}
 .fmt{
   background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius);
   display:flex;flex-direction:column;overflow:hidden;transition:border-color .18s, box-shadow .18s;
@@ -684,7 +679,7 @@ img{max-width:100%;display:block}
 <!-- ══ 프로그램 4포맷 ══ -->
 <section class="sec" id="formats"><div class="wrap stack g28">
   <div class="stack g10">
-    <span class="kicker">프로그램 5포맷</span>
+    <span class="kicker">프로그램 6포맷</span>
     <h2 class="h2">목적부터 고르세요. 프로그램은 저희가 맞춥니다</h2>
     <p class="sub">아래는 <b>최소 인원 기준 1회 시작가</b>입니다. 프로그램 상세에 <b>구성별·인원별 금액표</b>를 그대로 공개해 두었으니 예산에 맞는 구성을 직접 확인하실 수 있습니다.</p>
   </div>
@@ -786,6 +781,26 @@ img{max-width:100%;display:block}
         <div class="fmt__acts">
           <a class="btn btn--navy btn--sm" href="#inquiry" data-fmt="AI·업무역량">이 프로그램 문의</a>
           <a class="btn btn--outline btn--sm" href="#mood" data-tab="ai">자세히</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fmt">
+      <div class="fmt__top">
+        <div class="row"><h3>종일형 (조합)</h3><span class="code">FDY</span></div>
+        <p>연수 · 워크숍</p>
+      </div>
+      <div class="fmt__bd">
+        <dl class="kv">
+          <div><dt>대상</dt><dd>연수원 · 워크숍 · 창립기념 · 1박 2일</dd></div>
+          <div><dt>시간</dt><dd>4 ~ 6시간 <span style="color:var(--muted);font-size:12px">중식 제외</span></dd></div>
+          <div><dt>인원</dt><dd>30 ~ 150명</dd></div>
+          <div><dt>활동</dt><dd>진단 · 아트 · 보드게임을 하루 흐름으로 조합</dd></div>
+        </dl>
+        <p class="price">1회 150만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 6시간 30명</span></p>
+        <div class="fmt__acts">
+          <a class="btn btn--navy btn--sm" href="#inquiry" data-fmt="종일형 (조합)">이 프로그램 문의</a>
+          <a class="btn btn--outline btn--sm" href="#mood" data-tab="fullday">자세히</a>
         </div>
       </div>
     </article>
@@ -957,6 +972,7 @@ img{max-width:100%;display:block}
     <button class="tabbtn" role="tab" id="tab-craft" aria-controls="panel-craft" aria-selected="false" tabindex="-1" data-key="craft">아트테라피</button>
     <button class="tabbtn" role="tab" id="tab-game" aria-controls="panel-game" aria-selected="false" tabindex="-1" data-key="game">컬러 보드게임</button>
     <button class="tabbtn" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1" data-key="ai">AI·업무역량</button>
+    <button class="tabbtn" role="tab" id="tab-fullday" aria-controls="panel-fullday" aria-selected="false" tabindex="-1" data-key="fullday">종일형 (조합)</button>
   </div>
 
   <!-- 성격유형진단 -->
@@ -1234,6 +1250,64 @@ img{max-width:100%;display:block}
 
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="AI·업무역량">이 프로그램 문의</a></div>
   </div>
+
+  <!-- 종일형 (조합) -->
+  <div class="panel" role="tabpanel" id="panel-fullday" aria-labelledby="tab-fullday" hidden>
+    <div class="stack g10">
+      <span class="mood__k">종일형 (조합)</span>
+      <h3 class="mh">하루를 통째로<br>맡기셔도 됩니다</h3>
+    </div>
+    <div class="stack g14">
+      <p class="lead">연수원 일정이나 워크숍처럼 반나절 이상을 채워야 하는 자리입니다. 2시간짜리를 억지로 늘이지 않고, 진단·아트·보드게임을 목적에 맞게 조합해 하루 흐름으로 다시 짭니다. 1박 2일 연수의 한 파트만 맡는 구성도 많습니다.</p>
+      <div class="pills">
+        <a class="mpill" href="#inquiry" data-course="FDY-101 종일 조합 워크숍 (6시간)">FDY-101 종일 조합 워크숍 (6시간)</a>
+        <a class="mpill" href="#inquiry" data-course="FDY-102 반일 조합 (4시간)">FDY-102 반일 조합 (4시간)</a>
+        <a class="mpill" href="#inquiry" data-course="FDY-201 다회차 · 다교실 운영">FDY-201 다회차 · 다교실 운영</a>
+        <a class="mpill" href="#inquiry" data-course="FDY-301 1박 2일 연수 파트">FDY-301 1박 2일 연수 파트</a>
+      </div>
+    </div>
+    <div class="mcols">
+      <div class="mcard">
+        <h3>조합 예시 <span class="code">FDY-101 · 360분</span></h3>
+        <div class="currwrap"><table class="curr">
+          <thead><tr><th>시간</th><th>모듈</th><th>진행 방식</th></tr></thead>
+          <tbody>
+            <tr><td class="t">20분</td><td>진행 안내 · 컬러 게임 아이스브레이킹</td><td class="m">전체</td></tr>
+            <tr><td class="t">60분</td><td>컬러 성격·심리 자기보고식 진단 · 결과 해석</td><td class="m">개인</td></tr>
+            <tr><td class="t">70분</td><td>컬러 성격별 강점 · 맞는 소통법</td><td class="m">조별</td></tr>
+            <tr><td class="t">중식</td><td>교육 시간에는 포함되지 않습니다</td><td class="m">—</td></tr>
+            <tr><td class="t">40분</td><td>컬러 심리 · 스트레스 해소법 · 채움 컬러 찾기</td><td class="m">개인</td></tr>
+            <tr><td class="t">70분</td><td>선택 활동 ① — 컬러 센트 향수 / 디퓨저 / 오일파스텔 중 택 1</td><td class="m">실습</td></tr>
+            <tr><td class="t">80분</td><td>선택 활동 ② — 레인보우 프리즘 보드게임 또는 제작 추가</td><td class="m">조별</td></tr>
+            <tr><td class="t">20분</td><td>마무리 · 소감 공유</td><td class="m">전체</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="mcard">
+        <h3>기대 효과</h3>
+        <ul>
+          <li><s>·</s>강사를 여러 명 섭외해 시간을 쪼개지 않아도 됩니다</li>
+          <li><s>·</s>진단 결과가 오후 활동까지 이어져 하루가 한 흐름으로 묶입니다</li>
+          <li><s>·</s>부서별로 교실을 나눠 같은 시간에 돌릴 수 있습니다</li>
+          <li><s>·</s>1박 2일 연수의 힐링 파트만 맡는 구성도 가능합니다</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mcard">
+      <h3>구성별 견적</h3>
+      <p style="font-size:13.5px;color:var(--mood-title);opacity:.8;line-height:1.7;margin-bottom:4px">6시간 기준이며 <b>가져가시는 제작물 수</b>로 금액이 나뉩니다. 출장비 포함이며(지역에 따라 5~8만원), 21명부터 10명당 보조 강사 1인이 동행합니다.</p>
+      <div class="ptablewrap"><table class="ptable">
+        <thead><tr><th>구성</th><th>1인당</th><th>30명</th><th>50명</th><th>80명</th></tr></thead>
+        <tbody>
+          <tr><td>종일 6시간 · 제작 1종</td><td class="per">1.0만</td><td class="n">150~153만</td><td class="n">200~203만</td><td class="n">275~278만</td></tr>
+          <tr><td>종일 6시간 · 제작 2종</td><td class="per">2.0만</td><td class="n">180~183만</td><td class="n">250~253만</td><td class="n">355~358만</td></tr>
+        </tbody>
+      </table></div>
+      <p class="cap" style="color:var(--mood-title);opacity:.7">컬러 센트 향수 30ml나 오일파스텔처럼 단가가 높은 활동을 고르시면 재료비가 달라집니다. 반일(4시간) 구성과 150명 이상, 다교실 동시 진행은 별도로 산정해 드립니다.</p>
+    </div>
+
+    <div><a class="btn btn--navy" href="#inquiry" data-fmt="종일형 (조합)">이 프로그램 문의</a></div>
+  </div>
 </div></section>
 
 <!-- ══ 패키지 ══ -->
@@ -1435,6 +1509,7 @@ img{max-width:100%;display:block}
             <label class="chip"><input type="radio" name="관심포맷" value="아트테라피"> 아트테라피</label>
             <label class="chip"><input type="radio" name="관심포맷" value="컬러 보드게임"> 컬러 보드게임</label>
             <label class="chip"><input type="radio" name="관심포맷" value="AI·업무역량"> AI·업무역량</label>
+            <label class="chip"><input type="radio" name="관심포맷" value="종일형 (조합)"> 종일형 (조합)</label>
             <label class="chip"><input type="radio" name="관심포맷" value="아직 정하지 못함" checked> 아직 정하지 못함</label>
           </div>
         </div>
@@ -1529,6 +1604,7 @@ img{max-width:100%;display:block}
       <li><a href="#mood" data-tab="craft">아트테라피</a></li>
       <li><a href="#mood" data-tab="game">컬러 보드게임</a></li>
       <li><a href="#mood" data-tab="ai">AI·업무역량</a></li>
+      <li><a href="#mood" data-tab="fullday">종일형 (조합)</a></li>
     </ul>
   </div>
   <div>
@@ -1563,7 +1639,8 @@ img{max-width:100%;display:block}
     healing    :{bg:"#ECEAF2", title:"#2E2A3B", accent:"#5B4B7A", name:"명상·힐링"},
     craft      :{bg:"#F0E9F1", title:"#3B2C3C", accent:"#7C4E7E", name:"아트테라피"},
     game       :{bg:"#E9E6F0", title:"#2F2740", accent:"#5D4A86", name:"컬러 보드게임"},
-    ai         :{bg:"#DFE2ED", title:"#232A44", accent:"#2A335C", name:"AI·업무역량"}
+    ai         :{bg:"#DFE2ED", title:"#232A44", accent:"#2A335C", name:"AI·업무역량"},
+    fullday    :{bg:"#E4EAE8", title:"#20302C", accent:"#2F5A50", name:"종일형 (조합)"}
   };
   var root = document.documentElement;
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".tabbtn"));
