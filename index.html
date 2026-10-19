@@ -364,6 +364,15 @@ img{max-width:100%;display:block}
 .chip{display:inline-flex;align-items:center;gap:7px;border:0.5px solid var(--line-strong);padding:9px 14px;border-radius:999px;font-size:13.5px;cursor:pointer;background:var(--white);white-space:nowrap}
 .chip input{accent-color:var(--navy);margin:0}
 .chip:has(input:checked),.chip.is-on{border-color:var(--navy);background:var(--navy);color:#fff}
+.chip__p{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip:has(input:checked) .chip__p,.chip.is-on .chip__p{color:#A9C3C8}
+.chips--flash{animation:chipflash 1.6s ease}
+@keyframes chipflash{
+  0%,100%{box-shadow:0 0 0 0 rgba(47,110,113,0)}
+  18%{box-shadow:0 0 0 4px rgba(47,110,113,.26)}
+  70%{box-shadow:0 0 0 4px rgba(47,110,113,.16)}
+}
+.chips{border-radius:var(--radius-sm)}
 .formmsg{margin-top:12px;font-size:13.5px;line-height:1.7;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid transparent}
 .formmsg--ok{background:#E9F3EC;border-color:#BFDCC8;color:#1E5B33}
 .formmsg--err{background:#FBEDEC;border-color:#EFC9C5;color:#8E2B22}
@@ -738,7 +747,7 @@ img{max-width:100%;display:block}
           <div><dt>대상</dt><dd>실무자 · 기획/관리 부서</dd></div>
           <div><dt>시간</dt><dd>120 ~ 180분</dd></div>
           <div><dt>인원</dt><dd>10 ~ 30명 <span style="color:var(--muted);font-size:12px">개별 실습</span></dd></div>
-          <div><dt>활동</dt><dd>생성형 AI 실무 · Canva · NotebookLM · 업무 자동화</dd></div>
+          <div><dt>활동</dt><dd>생성형 AI 실무 · Canva · 업무 자동화 · 콘텐츠 마케팅</dd></div>
         </dl>
         <p class="price">1회 50만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 2시간 10명</span></p>
         <div class="fmt__acts">
@@ -810,11 +819,11 @@ img{max-width:100%;display:block}
       </div>
     </article>
     <article class="case">
-      <div class="case__img" style="padding:0"><img src="assets/case-04.jpg" alt="한국수력원자력 방사선보건원 임직원 힐링 교육 제작물" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="case__img" style="padding:0"><img src="assets/case-04.jpg" alt="한국수력원자력 방사선보건원 컬러센트 임직원 힐링 교육" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
       <div class="case__bd">
         <b>한국수력원자력 방사선보건원</b>
-        <span class="case__meta">임직원 힐링 · 성격유형 진단 + 제작</span>
-        <div class="tagline"><span class="tag">공공·에너지</span><span class="tag">하바리움펜</span></div>
+        <span class="case__meta">컬러센트 · 성격유형 진단 + 향수 제작</span>
+        <div class="tagline"><span class="tag">공공·에너지</span><span class="tag">컬러센트</span></div>
       </div>
     </article>
     <article class="case">
@@ -1005,7 +1014,6 @@ img{max-width:100%;display:block}
         <span class="mpill">ART-101 니치 향수 조향</span>
         <span class="mpill">ART-102 아로마 디퓨저</span>
         <span class="mpill">ART-103 하바리움 플라워펜</span>
-        <span class="mpill">ART-104 컬러 키링 · 소주잔 · 티코스터</span>
         <span class="mpill">ART-201 명리 조향 (사주 기반)</span>
       </div>
     </div>
@@ -1109,11 +1117,12 @@ img{max-width:100%;display:block}
       <h3 class="mh">실무에 바로 쓰는<br>생성형 AI 역량</h3>
     </div>
     <div class="stack g14">
-      <p class="lead">도구 소개로 끝나지 않습니다. 참가자가 실제로 쓰는 문서와 업무를 가져와, 교육이 끝나면 바로 쓸 수 있는 상태로 돌아가게 합니다. ChatGPT 3.5 출시 때부터 실무에 써 온 강사가 진행하며, 공공기관 AI 도입 특강 경험이 있습니다.</p>
+      <p class="lead">도구 소개로 끝나지 않습니다. 참가자가 실제로 쓰는 문서와 업무를 가져와, 교육이 끝나면 바로 쓸 수 있는 상태로 돌아가게 합니다. ChatGPT 3.5 출시 때부터 실무에 써 온 강사가 진행하며, 공공기관 AI 도입 특강 경험이 있습니다. <b>콘텐츠 마케팅·브랜딩</b>은 2012년부터의 마케팅 실무 경험을 그대로 옮긴 과정으로, 소상공인·보험설계사·1인기업 대상 SNS 전략 특강으로도 진행합니다.</p>
       <div class="pills">
         <span class="mpill">AIW-101 생성형 AI 실무 활용</span>
         <span class="mpill">AIW-102 Canva · NotebookLM 활용</span>
         <span class="mpill">AIW-201 업무 자동화</span>
+        <span class="mpill">AIW-301 콘텐츠 마케팅 · 브랜딩</span>
       </div>
     </div>
     <div class="mcols">
@@ -1174,7 +1183,7 @@ img{max-width:100%;display:block}
         <li>강당·회의실에서 바로 진행 가능</li>
       </ul>
       <p class="price">53만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 12명 기준</span></p>
-      <a class="btn btn--outline btn--full btn--sm" href="#inquiry" data-fmt="아직 정하지 못함">라이트로 문의</a>
+      <a class="btn btn--outline btn--full btn--sm" href="#inquiry" data-pack="라이트 (90분 · 제작물 없음 · 53만원~)">라이트로 문의</a>
     </div>
     <div class="pack pack--pick">
       <span class="pack__badge">가장 많이 선택</span>
@@ -1187,7 +1196,7 @@ img{max-width:100%;display:block}
         <li>워크숍·연수 표준 구성</li>
       </ul>
       <p class="price">57만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 재료 1~1.5만원/인</span></p>
-      <a class="btn btn--navy btn--full btn--sm" href="#inquiry" data-fmt="아직 정하지 못함">스탠더드로 문의</a>
+      <a class="btn btn--navy btn--full btn--sm" href="#inquiry" data-pack="스탠더드 (120분 · 기본 제작물 · 57만원~)">스탠더드로 문의</a>
     </div>
     <div class="pack">
       <h4>프리미엄</h4>
@@ -1199,7 +1208,7 @@ img{max-width:100%;display:block}
         <li>창립기념·전사 행사에 적합</li>
       </ul>
       <p class="price">69만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 재료 2~3만원/인</span></p>
-      <a class="btn btn--outline btn--full btn--sm" href="#inquiry" data-fmt="아직 정하지 못함">프리미엄으로 문의</a>
+      <a class="btn btn--outline btn--full btn--sm" href="#inquiry" data-pack="프리미엄 (120분~ · 고급 제작물 · 69만원~)">프리미엄으로 문의</a>
     </div>
   </div>
 
@@ -1353,6 +1362,17 @@ img{max-width:100%;display:block}
             <label class="chip"><input type="radio" name="관심포맷" value="AI·업무역량"> AI·업무역량</label>
             <label class="chip"><input type="radio" name="관심포맷" value="아직 정하지 못함" checked> 아직 정하지 못함</label>
           </div>
+        </div>
+
+        <div class="f f--full">
+          <label>희망 패키지</label>
+          <div class="chips" id="packChips">
+            <label class="chip"><input type="radio" name="희망패키지" value="라이트 (90분 · 제작물 없음 · 53만원~)"> 라이트 <span class="chip__p">53만원~</span></label>
+            <label class="chip"><input type="radio" name="희망패키지" value="스탠더드 (120분 · 기본 제작물 · 57만원~)"> 스탠더드 <span class="chip__p">57만원~</span></label>
+            <label class="chip"><input type="radio" name="희망패키지" value="프리미엄 (120분~ · 고급 제작물 · 69만원~)"> 프리미엄 <span class="chip__p">69만원~</span></label>
+            <label class="chip"><input type="radio" name="희망패키지" value="아직 정하지 못함" checked> 아직 정하지 못함</label>
+          </div>
+          <p class="cap" style="margin-top:2px">시작가는 최소 인원 기준입니다. 인원·재료 구성에 따라 달라지며, 정확한 금액은 견적서로 보내드립니다.</p>
         </div>
 
         <div class="f f--full"><label for="budget">예상 예산</label>
@@ -1517,24 +1537,48 @@ img{max-width:100%;display:block}
   });
 
   /* ── "이 프로그램 문의" → 폼의 관심 포맷 자동 선택 ── */
-  var fmtRadios = Array.prototype.slice.call(document.querySelectorAll('input[name="관심포맷"]'));
+  var fmtRadios  = Array.prototype.slice.call(document.querySelectorAll('input[name="관심포맷"]'));
+  var packRadios = Array.prototype.slice.call(document.querySelectorAll('input[name="희망패키지"]'));
 
   /* :has() 미지원 브라우저에서도 선택 칩이 보이도록 하는 폴백 */
-  function paintChips(){
-    fmtRadios.forEach(function(r){
+  function paint(radios){
+    radios.forEach(function(r){
       var chip = r.closest ? r.closest(".chip") : null;
       if(chip) chip.classList.toggle("is-on", r.checked);
     });
   }
-  fmtRadios.forEach(function(r){ r.addEventListener("change", paintChips); });
+  function paintChips(){ paint(fmtRadios); paint(packRadios); }
+  fmtRadios.concat(packRadios).forEach(function(r){ r.addEventListener("change", paintChips); });
   paintChips();
 
-  document.querySelectorAll("[data-fmt]").forEach(function(a){
-    a.addEventListener("click", function(){
-      var v = a.dataset.fmt;
-      fmtRadios.forEach(function(r){ r.checked = (r.value === v); });
-      paintChips();
+  /* 고른 항목이 폼 어디에 반영됐는지 눈에 띄게 */
+  function flash(el){
+    if(!el) return;
+    el.classList.remove("chips--flash");
+    void el.offsetWidth;
+    el.classList.add("chips--flash");
+  }
+
+  /* 선택을 폼으로 옮기고, 해당 칩 줄을 한 번 밝힌다 */
+  function choose(radios, value, groupId){
+    var hit = false;
+    radios.forEach(function(r){
+      var on = (r.value === value);
+      if(on) hit = true;
+      r.checked = on;
     });
+    if(!hit) return;
+    paintChips();
+    flash(document.getElementById(groupId));
+  }
+
+  document.querySelectorAll("[data-fmt]").forEach(function(a){
+    a.addEventListener("click", function(){ choose(fmtRadios, a.dataset.fmt, "fmtChips"); });
+  });
+
+  /* 패키지 카드의 "○○로 문의" — 고른 구간이 그대로 문의에 실린다 */
+  document.querySelectorAll("[data-pack]").forEach(function(a){
+    a.addEventListener("click", function(){ choose(packRadios, a.dataset.pack, "packChips"); });
   });
 
   /* ── 연락처 자동 하이픈 ── */
