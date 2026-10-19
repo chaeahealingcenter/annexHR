@@ -334,8 +334,11 @@ img{max-width:100%;display:block}
 .mpill{
   font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:20px;
   background:var(--white);color:var(--mood-accent);border:0;
-  transition:color .55s ease;
+  transition:color .55s ease, box-shadow .2s ease, transform .2s ease;
+  cursor:pointer;text-decoration:none;display:inline-block;
 }
+.mpill:hover,.mpill:focus-visible{box-shadow:0 2px 10px rgba(0,0,0,.14);transform:translateY(-1px)}
+.mpill::after{content:"＋";margin-left:7px;opacity:.45;font-size:11px}
 .mcols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .mcard{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px}
 .mcard h3{font-size:16.5px;color:var(--mood-title);transition:color .55s ease}
@@ -710,9 +713,9 @@ img{max-width:100%;display:block}
           <div><dt>대상</dt><dd>감정소모 직무 · 번아웃 관리</dd></div>
           <div><dt>시간</dt><dd>90 ~ 120분</dd></div>
           <div><dt>인원</dt><dd>12 ~ 40명</dd></div>
-          <div><dt>활동</dt><dd>컬러 심리 진단 · 오일파스텔 드로잉 · 나무 액자</dd></div>
+          <div><dt>활동</dt><dd>컬러 심리 진단 · 아로마 호흡 힐링 · 디퓨저 제작 · 오일파스텔 드로잉</dd></div>
         </dl>
-        <p class="price">1회 75만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 오일파스텔 12명</span></p>
+        <p class="price">1회 57만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 아로마 디퓨저 12명</span></p>
         <div class="fmt__acts">
           <a class="btn btn--navy btn--sm" href="#inquiry" data-fmt="명상·힐링">이 프로그램 문의</a>
           <a class="btn btn--outline btn--sm" href="#mood" data-tab="healing">자세히</a>
@@ -958,10 +961,10 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">서로를 “일하는 방식”으로만 알던 팀이, 성향으로 서로를 다시 읽는 시간입니다. 진단 결과를 눈으로 확인하고 그 자리에서 팀의 소통 규칙까지 함께 만듭니다.</p>
       <div class="pills">
-        <span class="mpill">PSN-101 MBTI 팀 커뮤니케이션</span>
-        <span class="mpill">PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)</span>
-        <span class="mpill">PSN-201 MBTI 컬러 센트 향수</span>
-        <span class="mpill">PSN-301 에니어그램 힐링</span>
+        <a class="mpill" href="#inquiry" data-course="PSN-101 MBTI 팀 커뮤니케이션">PSN-101 MBTI 팀 커뮤니케이션</a>
+        <a class="mpill" href="#inquiry" data-course="PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)">PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)</a>
+        <a class="mpill" href="#inquiry" data-course="PSN-201 MBTI 컬러 센트 향수">PSN-201 MBTI 컬러 센트 향수</a>
+        <a class="mpill" href="#inquiry" data-course="PSN-301 에니어그램 힐링">PSN-301 에니어그램 힐링</a>
       </div>
     </div>
     <div class="mcols">
@@ -1014,11 +1017,12 @@ img{max-width:100%;display:block}
       <h3 class="mh">잠시 멈추면<br>다시 채워진다</h3>
     </div>
     <div class="stack g14">
-      <p class="lead">성과 이야기를 잠시 내려놓는 시간입니다. 색과 호흡, 향과 그림으로 감정을 정리하고 조직 안에서 회복할 여지를 만듭니다.</p>
+      <p class="lead">성과 이야기를 잠시 내려놓는 시간입니다. 색과 호흡, 향과 그림으로 감정을 정리하고 조직 안에서 회복할 여지를 만듭니다. 그림이 부담스러운 조직에는 향과 호흡으로만 가는 구성도 있습니다.</p>
       <div class="pills">
-        <span class="mpill">HLG-101 컬러 심리 진단</span>
-        <span class="mpill">HLG-102 오일파스텔 힐링 드로잉</span>
-        <span class="mpill">HLG-201 아로마 조향</span>
+        <a class="mpill" href="#inquiry" data-course="HLG-101 컬러 심리 진단">HLG-101 컬러 심리 진단</a>
+        <a class="mpill" href="#inquiry" data-course="HLG-102 오일파스텔 힐링 드로잉">HLG-102 오일파스텔 힐링 드로잉</a>
+        <a class="mpill" href="#inquiry" data-course="HLG-201 아로마 조향">HLG-201 아로마 조향</a>
+        <a class="mpill" href="#inquiry" data-course="HLG-202 아로마 호흡 힐링 · 디퓨저 제작">HLG-202 아로마 호흡 힐링 · 디퓨저 제작</a>
       </div>
     </div>
     <div class="mcols">
@@ -1047,16 +1051,16 @@ img{max-width:100%;display:block}
       </div>
     </div>
     <div class="mcard">
-      <h3>인원별 견적</h3>
-      <p style="font-size:13.5px;color:var(--mood-title);opacity:.8;line-height:1.7;margin-bottom:4px">오일파스텔과 나무 액자가 포함된 금액입니다. 재료비는 <b>20명까지 1인 2.5만원, 21명부터 2만원</b>으로 내려갑니다. 출장비 포함이며(지역에 따라 5~8만원), 21명부터 보조 강사가 동행합니다.</p>
+      <h3>구성별 견적</h3>
+      <p style="font-size:13.5px;color:var(--mood-title);opacity:.8;line-height:1.7;margin-bottom:4px">가져가시는 <b>제작물</b>로 금액이 나뉩니다. 출장비 포함이며(지역에 따라 5~8만원), 21명부터 보조 강사가 동행합니다.</p>
       <div class="ptablewrap"><table class="ptable">
-        <thead><tr><th>인원</th><th>12명</th><th>20명</th><th>30명</th><th>40명</th></tr></thead>
+        <thead><tr><th>구성</th><th>1인당</th><th>12명</th><th>20명</th><th>30명</th><th>40명</th></tr></thead>
         <tbody>
-          <tr><td>총액</td><td class="n">75~78만</td><td class="n">95~98만</td><td class="n">130~133만</td><td class="n">165~168만</td></tr>
-          <tr><td>1인당</td><td class="per">6.5만</td><td class="per">4.9만</td><td class="per">4.4만</td><td class="per">4.2만</td></tr>
+          <tr><td>아로마 호흡 힐링 + 디퓨저 제작</td><td class="per">1.0만</td><td class="n">57~60만</td><td class="n">65~68만</td><td class="n">90~93만</td><td class="n">115~118만</td></tr>
+          <tr><td>오일파스텔 드로잉 + 나무 액자</td><td class="per">2.5만</td><td class="n">75~78만</td><td class="n">95~98만</td><td class="n">130~133만</td><td class="n">165~168만</td></tr>
         </tbody>
       </table></div>
-      <p class="cap" style="color:var(--mood-title);opacity:.7">오일파스텔은 개별 지도가 필요해 40명까지 운영합니다. 그 이상은 교실을 나눠 동시에 진행합니다.</p>
+      <p class="cap" style="color:var(--mood-title);opacity:.7">오일파스텔 재료비는 <b>20명까지 1인 2.5만원, 21명부터 2만원</b>으로 내려갑니다(누진 적용). 오일파스텔은 개별 지도가 필요해 40명까지 운영하며, 그 이상은 교실을 나눠 동시에 진행합니다. 아로마 디퓨저 구성은 더 큰 인원도 가능합니다.</p>
     </div>
 
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="명상·힐링">이 프로그램 문의</a></div>
@@ -1071,10 +1075,10 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">손이 움직이면 대화가 열립니다. 흔한 만들기 체험이 아니라 감정을 알아차리고 스스로를 돌보는 시간으로 설계합니다. 결과물을 가져갈 수 있어 창립기념·연말 행사처럼 인원이 많은 자리에서 특히 잘 맞습니다.</p>
       <div class="pills">
-        <span class="mpill">ART-101 컬러 센트 향수</span>
-        <span class="mpill">ART-102 아로마 디퓨저</span>
-        <span class="mpill">ART-103 하바리움 플라워펜</span>
-        <span class="mpill">ART-201 명리 조향 (사주 기반)</span>
+        <a class="mpill" href="#inquiry" data-course="ART-101 컬러 센트 향수">ART-101 컬러 센트 향수</a>
+        <a class="mpill" href="#inquiry" data-course="ART-102 아로마 디퓨저">ART-102 아로마 디퓨저</a>
+        <a class="mpill" href="#inquiry" data-course="ART-103 하바리움 플라워펜">ART-103 하바리움 플라워펜</a>
+        <a class="mpill" href="#inquiry" data-course="ART-201 명리 조향 (사주 기반)">ART-201 명리 조향 (사주 기반)</a>
       </div>
     </div>
     <div class="mcols">
@@ -1126,7 +1130,7 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">컬러로 서로의 기질을 확인한 뒤, 그 결과를 들고 대형 보드게임 판으로 넘어갑니다. 가벼운 질문에서 시작해 점점 깊은 대화로 이어지는 구조라, 단순한 놀이로 끝나지 않습니다. <b>자체 개발한 국내 유일 컬러테라피 대화형 보드게임</b>이며, 개발자와 컬러보드게임지도사 과정을 이수한 전문 강사가 진행합니다.</p>
       <div class="pills">
-        <span class="mpill">GME-101 레인보우 프리즘</span>
+        <a class="mpill" href="#inquiry" data-course="GME-101 레인보우 프리즘">GME-101 레인보우 프리즘</a>
       </div>
     </div>
     <div class="mcols">
@@ -1179,10 +1183,10 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">도구 소개로 끝나지 않습니다. 참가자가 실제로 쓰는 문서와 업무를 가져와, 교육이 끝나면 바로 쓸 수 있는 상태로 돌아가게 합니다. ChatGPT 3.5 출시 때부터 실무에 써 온 강사가 진행하며, 공공기관 AI 도입 특강 경험이 있습니다. <b>콘텐츠 마케팅·브랜딩</b>은 2012년부터의 마케팅 실무 경험을 그대로 옮긴 과정으로, 소상공인·보험설계사·1인기업 대상 SNS 전략 특강으로도 진행합니다.</p>
       <div class="pills">
-        <span class="mpill">AIW-101 생성형 AI 실무 활용</span>
-        <span class="mpill">AIW-102 Canva · NotebookLM 활용</span>
-        <span class="mpill">AIW-201 업무 자동화</span>
-        <span class="mpill">AIW-301 콘텐츠 마케팅 · 브랜딩</span>
+        <a class="mpill" href="#inquiry" data-course="AIW-101 생성형 AI 실무 활용">AIW-101 생성형 AI 실무 활용</a>
+        <a class="mpill" href="#inquiry" data-course="AIW-102 Canva · NotebookLM 활용">AIW-102 Canva · NotebookLM 활용</a>
+        <a class="mpill" href="#inquiry" data-course="AIW-201 업무 자동화">AIW-201 업무 자동화</a>
+        <a class="mpill" href="#inquiry" data-course="AIW-301 콘텐츠 마케팅 · 브랜딩">AIW-301 콘텐츠 마케팅 · 브랜딩</a>
       </div>
     </div>
     <div class="mcols">
@@ -1323,7 +1327,7 @@ img{max-width:100%;display:block}
   <div class="steps">
     <div class="step"><i>STEP 1</i><b>문의</b><p>폼 또는 톡톡으로 조직 상황만 남겨주세요.</p></div>
     <div class="step"><i>STEP 2</i><b>상담</b><p>목적·인원·일정을 확인하고 방향을 잡습니다.</p></div>
-    <div class="step"><i>STEP 3</i><b>제안·견적</b><p>시간표까지 짠 강의계획서와 견적서를 문서로 보내드립니다.</p></div>
+    <div class="step"><i>STEP 3</i><b>제안·견적</b><p>프로그램 세부 강의계획서와 견적서를 문서로 보내드립니다.</p></div>
     <div class="step"><i>STEP 4</i><b>확정</b><p>일정·장소·재료 수량을 확정합니다.</p></div>
     <div class="step"><i>STEP 5</i><b>진행</b><p>강사와 운영 인력이 현장에 함께합니다.</p></div>
     <div class="step"><i>STEP 6</i><b>후기</b><p>만족도 결과와 현장 사진을 정리해 드립니다.</p></div>
@@ -1439,6 +1443,9 @@ img{max-width:100%;display:block}
           <p class="cap" style="margin-top:2px">시작가는 최소 인원 기준입니다. 인원·재료 구성에 따라 달라지며, 정확한 금액은 견적서로 보내드립니다.</p>
         </div>
 
+        <div class="f f--full"><label for="course">관심 과정 <span style="font-weight:400;color:var(--muted)">(선택)</span></label>
+          <input id="course" name="관심과정" type="text" placeholder="프로그램 상세에서 과정 이름을 누르면 자동으로 채워집니다">
+        </div>
         <div class="f f--full"><label for="budget">예상 예산</label>
           <select id="budget" name="예상예산">
             <option value="">선택</option>
@@ -1638,6 +1645,20 @@ img{max-width:100%;display:block}
 
   document.querySelectorAll("[data-fmt]").forEach(function(a){
     a.addEventListener("click", function(){ choose(fmtRadios, a.dataset.fmt, "fmtChips"); });
+  });
+
+  /* 과정 코드 칩 — 누르면 포맷이 잡히고 과정명이 문의에 실린다 */
+  var courseInput = document.getElementById("course");
+  document.querySelectorAll(".mpill[data-course]").forEach(function(a){
+    a.addEventListener("click", function(){
+      var panel = a.closest(".panel");
+      var key = panel ? panel.id.replace("panel-","") : "";
+      if(MOOD[key]) choose(fmtRadios, MOOD[key].name, "fmtChips");
+      if(courseInput){
+        courseInput.value = a.dataset.course;
+        flash(courseInput.closest(".f"));
+      }
+    });
   });
 
   /* 패키지 카드의 "○○로 문의" — 고른 구간이 그대로 문의에 실린다 */
