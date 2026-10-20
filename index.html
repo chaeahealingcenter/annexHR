@@ -365,6 +365,7 @@ img{max-width:100%;display:block}
 .item figcaption{font-size:12.5px;color:var(--mood-title);line-height:1.4}
 .items--3{grid-template-columns:repeat(3,1fr)}
 .item--wide img{aspect-ratio:4/3}
+@media (max-width:640px){.items--3 .item--wide[style]{grid-column:auto}}
 @media (max-width:640px){.items{display:flex;overflow-x:auto;gap:10px;padding-bottom:4px;scrollbar-width:none}.items::-webkit-scrollbar{display:none}.item{flex:0 0 42%}.item--wide{flex:0 0 68%}}
 .mcard{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px}
 .mcard h3{font-size:16.5px;color:var(--mood-title);transition:color .55s ease}
@@ -729,7 +730,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
     <h4>그 밖의 주요 출강처</h4>
     <p>SCK 법인그룹 · 네이버파이낸셜 · 무신사 · 파마리서치 ·
     BKL세무회계법인 · (주)SL · 한국광해광업공단 · 식품안전정보원 · 한국보건사회연구소 ·
-    서울아리수 · 교육연구정보원 · 원주·양양속초·성북강북·경기구리남양주 교육지원청 ·
+    서울아리수 · 국립완주문화유산연구소 · 교육연구정보원 · 원주·양양속초·성북강북·경기구리남양주 교육지원청 ·
     충남교육청유교원 · 중장년내일센터(4회) · AK플라자 문화아카데미 · 홈플러스 문화센터 · 삼성 강남 컬처랩 ·
     군부대 · 문화재단 등</p>
   </div>
@@ -1164,6 +1165,14 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
         </tbody>
       </table></div>
       <p class="cap" style="color:var(--mood-title);opacity:.7">정식검사는 MBTI Form M/Q 공식 도구를 사용하며 사전에 온라인으로 진행합니다. 50명을 넘으면 별도 견적으로 안내드립니다.</p>
+    </div>
+
+    <div class="mcard">
+      <h3>현장 사진 <span class="code">자체 웹앱 셀프진단 진행 장면</span></h3>
+      <div class="items items--3">
+        <figure class="item item--wide" style="grid-column:1 / span 2"><img src="assets/webapp-01.jpg" alt="국립완주문화유산연구소 강의 — 자체 웹앱 '컬러로 보는 현재의 나' 진단 화면" loading="lazy"><figcaption>참가자가 각자 스마트폰으로 진단하고, 결과를 화면에서 함께 봅니다</figcaption></figure>
+      </div>
+      <p class="cap" style="color:var(--mood-title);opacity:.7">국립완주문화유산연구소 연수 현장입니다. 웹앱 진단은 센터가 직접 개발해 운영합니다.</p>
     </div>
 
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="성격유형진단">이 프로그램 문의</a></div>
