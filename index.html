@@ -404,6 +404,7 @@ img{max-width:100%;display:block}
   font-size:15px;font-weight:600;padding:14px 20px;border-radius:var(--radius-sm);
 }
 .talk:hover{filter:brightness(.95)}
+button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
 
 /* ── 하단 고정 CTA (모바일) ── */
 .fixbar{display:none}
@@ -1417,7 +1418,7 @@ img{max-width:100%;display:block}
     <h2 class="h2">프로그램명 몰라도 됩니다. 상황만 알려주세요</h2>
   </div>
   <div class="steps">
-    <div class="step"><i>STEP 1</i><b>문의</b><p>폼 또는 톡톡으로 조직 상황만 남겨주세요.</p></div>
+    <div class="step"><i>STEP 1</i><b>문의</b><p>문의 폼에 기관명과 조직 상황을 남겨주세요.</p></div>
     <div class="step"><i>STEP 2</i><b>상담</b><p>목적·인원·일정을 확인하고 방향을 잡습니다.</p></div>
     <div class="step"><i>STEP 3</i><b>제안·견적</b><p>프로그램 세부 강의계획서와 견적서를 문서로 보내드립니다.</p></div>
     <div class="step"><i>STEP 4</i><b>확정</b><p>일정·장소·재료 수량을 확정합니다.</p></div>
@@ -1573,12 +1574,12 @@ img{max-width:100%;display:block}
 
     <aside class="aside">
       <div class="card">
-        <h3 class="h3">폼 작성이 번거로우시면</h3>
-        <p class="cap">전화나 톡톡으로 바로 문의 주세요. 프로그램명을 모르셔도 상황만 말씀해 주시면 됩니다.</p>
-        <a class="talk" href="tel:050714317305" style="background:var(--navy)">0507-1431-7305</a>
-        <!-- ⚠️ 네이버 톡톡 링크로 교체 (채아힐링센터 톡톡 주소) -->
-        <a class="talk" href="https://talk.naver.com/profile/w4m5ao" target="_blank" rel="noopener">네이버 톡톡 상담</a>
-        <p class="cap">이메일 annexhredu@gmail.com</p>
+        <h3 class="h3">톡톡으로 보내시려면</h3>
+        <p class="cap">폼을 먼저 채우신 뒤 아래 버튼으로 복사해 톡톡에 붙여 넣어 주세요. 프로그램명은 몰라도 되지만, <b>소속 기관명이 없는 문의에는 회신드리지 않습니다.</b></p>
+        <button class="talk" type="button" id="copyInq" style="background:var(--navy)">작성 내용 복사</button>
+        <a class="talk" href="https://talk.naver.com/profile/w4m5ao" target="_blank" rel="noopener">네이버 톡톡 열기</a>
+        <p class="cap formmsg" id="copyMsg" role="status" aria-live="polite" hidden></p>
+        <p class="cap">전화 <a href="tel:050714317305" style="color:var(--navy);font-weight:600">0507-1431-7305</a> · 이메일 annexhredu@gmail.com</p>
       </div>
       <div class="card">
         <h3 class="h3">문의 전 준비하시면 빠릅니다</h3>
@@ -1806,6 +1807,41 @@ img{max-width:100%;display:block}
   /* 패키지 카드의 "○○로 문의" — 고른 구간이 그대로 문의에 실린다 */
   document.querySelectorAll("[data-pack]").forEach(function(a){
     a.addEventListener("click", function(){ choose(packRadios, a.dataset.pack, "packChips"); });
+  });
+
+  /* ── 작성 내용 복사 — 톡톡으로 보낼 때도 폼 항목은 그대로 받는다 ── */
+  var copyBtn = document.getElementById("copyInq"), copyMsg = document.getElementById("copyMsg");
+  function fieldText(name){
+    var els = document.querySelectorAll('#inqForm [name="'+name+'"]');
+    if(!els.length) return "";
+    if(els[0].type === "radio"){ var on = document.querySelector('#inqForm [name="'+name+'"]:checked'); return on ? on.value : ""; }
+    return (els[0].value || "").trim();
+  }
+  function buildInquiry(){
+    var rows = [["기관·기업명","기관·기업명"],["담당자명","담당자명"],["연락처","연락처"],["이메일","이메일"],
+                ["희망 일정","희망일정"],["진행 지역","진행지역"],["예상 인원","예상인원"],["희망 시간","희망시간"],
+                ["관심 포맷","관심포맷"],["관심 과정","관심과정"],["희망 패키지","희망패키지"],["예상 예산","예상예산"],["기타 요청","기타요청"]];
+    var out = ["[아넥스HR교육원 교육 문의]"];
+    rows.forEach(function(r){ var v = fieldText(r[1]); if(v) out.push(r[0]+": "+v); });
+    return out.join("\n");
+  }
+  function showCopy(kind, text){ if(!copyMsg) return; copyMsg.hidden = false; copyMsg.className = "cap formmsg " + kind; copyMsg.textContent = text; }
+  if(copyBtn) copyBtn.addEventListener("click", function(){
+    var org = document.getElementById("org");
+    if(org && !org.value.trim()){
+      org.focus(); flash(org.closest(".f"));
+      showCopy("err", "기관·기업명을 먼저 적어 주세요. 소속이 없는 문의는 회신드리지 않습니다.");
+      return;
+    }
+    var text = buildInquiry();
+    function done(){ showCopy("ok", "복사했습니다. 톡톡을 열어 붙여 넣어 주세요."); }
+    function fallback(){
+      var ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly","");
+      ta.style.position = "fixed"; ta.style.left = "-9999px"; document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy"); done(); }catch(e){ showCopy("err", "자동 복사가 막혀 있습니다. 폼 내용을 직접 복사해 주세요."); }
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, fallback); } else fallback();
   });
 
   /* ── 연락처 자동 하이픈 ── */
