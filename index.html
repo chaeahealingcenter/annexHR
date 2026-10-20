@@ -363,7 +363,9 @@ img{max-width:100%;display:block}
 .course-row{display:flex;gap:8px;align-items:stretch}.course-row input{flex:1;min-width:0}.course-row .btn{flex:none;white-space:nowrap}
 .mcols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 /* 제작물 썸네일 */
-.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.items{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.items--rec{grid-template-columns:repeat(3,1fr);gap:20px 18px;margin-top:6px}
+.items--rec .item{gap:9px}
 .item{margin:0;display:flex;flex-direction:column;gap:7px}
 .item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block;background:rgba(0,0,0,.04)}
 .item figcaption{font-size:12.5px;color:var(--mood-title);line-height:1.4}
@@ -1181,12 +1183,13 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
 
     <div class="mcard">
       <h3>추천 아트테라피 <span class="code">조합 참고 · 실제 제작물 사진</span></h3>
-      <div class="items">
+      <div class="items items--rec">
         <figure class="item" data-add="컬러 센트 향수" role="button" tabindex="0"><img src="assets/item-01.jpg" alt="컬러 센트 향수 실제 제작물" loading="lazy"><figcaption>컬러 센트 향수<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="하바리움 플라워 바틀" role="button" tabindex="0"><img src="assets/item-02.jpg" alt="하바리움 플라워 바틀 실제 제작물" loading="lazy"><figcaption>하바리움 플라워 바틀<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="하바리움 플라워 펜" role="button" tabindex="0"><img src="assets/item-03.jpg" alt="하바리움 플라워 펜 실제 제작물" loading="lazy"><figcaption>하바리움 플라워 펜<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="아로마 디퓨저" role="button" tabindex="0"><img src="assets/item-08.jpg" alt="아로마 디퓨저 (개별 케이스) 실제 제작물" loading="lazy"><figcaption>아로마 디퓨저 (개별 케이스)<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="크리스마스 하바리움 바틀" role="button" tabindex="0"><img src="assets/item-09.jpg" alt="크리스마스 하바리움 LED 바틀 실제 제작물" loading="lazy"><figcaption>크리스마스 하바리움 바틀 (LED)<span class="item__add">＋ 담기</span></figcaption></figure>
+        <figure class="item" data-add="오일파스텔 드로잉" role="button" tabindex="0"><img src="assets/item-04.jpg" alt="오일파스텔 드로잉 실제 제작물" loading="lazy"><figcaption>오일파스텔 드로잉<span class="item__add">＋ 담기</span></figcaption></figure>
       </div>
       <p class="cap" style="color:var(--mood-title);opacity:.7">진단·소통 세션 뒤에 붙일 수 있는 제작 활동입니다. 사진을 누르면 문의 폼에 담깁니다. 향수는 10ml 1.5만 · 30ml 2.5만, 바틀·펜·디퓨저는 1인 1만원이 더해집니다. 크리스마스 LED 바틀은 송년회 시즌 구성으로 별도 견적입니다.</p>
     </div>
@@ -1245,12 +1248,13 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
     </div>
     <div class="mcard">
       <h3>추천 아트테라피 <span class="code">조합 참고 · 실제 제작물 사진</span></h3>
-      <div class="items">
+      <div class="items items--rec">
         <figure class="item" data-add="오일파스텔 드로잉" role="button" tabindex="0"><img src="assets/item-04.jpg" alt="오일파스텔 드로잉 실제 제작물" loading="lazy"><figcaption>오일파스텔 드로잉<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="아로마 디퓨저" role="button" tabindex="0"><img src="assets/item-08.jpg" alt="아로마 디퓨저 (개별 케이스) 실제 제작물" loading="lazy"><figcaption>아로마 디퓨저 (개별 케이스)<span class="item__add">＋ 담기</span></figcaption></figure>
-        <figure class="item" data-add="크리스마스 하바리움 바틀" role="button" tabindex="0"><img src="assets/item-09.jpg" alt="크리스마스 하바리움 LED 바틀 실제 제작물" loading="lazy"><figcaption>크리스마스 하바리움 바틀 (LED)<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="하바리움 플라워 바틀" role="button" tabindex="0"><img src="assets/item-02.jpg" alt="하바리움 플라워 바틀 실제 제작물" loading="lazy"><figcaption>하바리움 플라워 바틀<span class="item__add">＋ 담기</span></figcaption></figure>
         <figure class="item" data-add="하바리움 플라워 펜" role="button" tabindex="0"><img src="assets/item-03.jpg" alt="하바리움 플라워 펜 실제 제작물" loading="lazy"><figcaption>하바리움 플라워 펜<span class="item__add">＋ 담기</span></figcaption></figure>
+        <figure class="item" data-add="컬러 센트 향수" role="button" tabindex="0"><img src="assets/item-01.jpg" alt="컬러 센트 향수 실제 제작물" loading="lazy"><figcaption>컬러 센트 향수<span class="item__add">＋ 담기</span></figcaption></figure>
+        <figure class="item" data-add="크리스마스 하바리움 바틀" role="button" tabindex="0"><img src="assets/item-09.jpg" alt="크리스마스 하바리움 LED 바틀 실제 제작물" loading="lazy"><figcaption>크리스마스 하바리움 바틀 (LED)<span class="item__add">＋ 담기</span></figcaption></figure>
       </div>
       <p class="cap" style="color:var(--mood-title);opacity:.7">명상·힐링 세션에 붙일 수 있는 제작 활동입니다. 사진을 누르면 문의 폼에 담깁니다. 금액은 아래 표에서 확인하세요.</p>
     </div>
