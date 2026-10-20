@@ -480,6 +480,13 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
 .rev{background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px}
 .rev q{quotes:none;font-size:14.5px;line-height:1.8;color:var(--ink)}
 .rev cite{margin-top:auto;font-style:normal;font-size:12.5px;color:var(--muted)}
+/* 재요청 후기 — 한 줄을 통째로 써서 먼저 읽히게 */
+.rev--wide{grid-column:1 / -1;flex-direction:row;align-items:center;gap:22px;border-left:3px solid var(--teal);padding:22px 26px}
+.rev--wide .rev__tag{flex:none;font-size:11.5px;font-weight:600;letter-spacing:.05em;color:var(--teal);border:1px solid var(--teal);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.rev--wide .rev__bd{display:flex;flex-direction:column;gap:8px}
+.rev--wide q{font-size:16px;font-weight:500}
+.rev--wide cite{margin-top:0}
+@media (max-width:640px){.rev--wide{flex-direction:column;align-items:flex-start;gap:12px}}
 @media (max-width:860px){.revs,.satbar{grid-template-columns:1fr}}
 
 /* ── 구성별 가격표 ── */
@@ -941,6 +948,13 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
   </div>
 
   <div class="revs">
+    <div class="rev rev--wide">
+      <span class="rev__tag">다른 센터로 재요청</span>
+      <div class="rev__bd">
+        <q>참여자 만족도가 정말 높았어요. 그래서 이후 다른 지역 센터에서도 강의를 요청드려요.</q>
+        <cite>서울 중장년 내일센터 · 담당자 — 교육 후 다른 지역 센터 강의로 이어졌습니다</cite>
+      </div>
+    </div>
     <div class="rev">
       <q>진단 결과와 설명을 듣고 나니 요즘 제 상태랑 똑같아서 놀랐어요.</q>
       <cite>경기도인재개발원 · 셀프 진단 컬러테라피 참가자</cite>
