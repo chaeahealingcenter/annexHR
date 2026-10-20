@@ -64,7 +64,7 @@
     {"@type":"Question","name":"결제와 세금계산서는 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"교육 종료 후 현장에서 카드로 결제하시거나, 세금계산서를 발행해 계좌이체로 정산합니다. 법인카드는 사전 온라인 결제와 현장 결제 모두 가능하며, 필요하시면 결제 페이지 링크를 보내드립니다. 사전 정산이 필요한 기관은 결산 일정에 맞춰 서류를 처리해 드립니다."}},
     {"@type":"Question","name":"지방 출강도 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"전국 출강 가능합니다. 출장비는 지역에 따라 5~8만원이며 견적서에 사전 명시됩니다."}},
     {"@type":"Question","name":"재료와 장비는 누가 준비하나요?","acceptedAnswer":{"@type":"Answer","text":"재료와 진행 도구는 저희가 준비해 갑니다. 담당자께서는 조별 테이블, 빔프로젝터 또는 TV, 강사용 마이크·스피커를 확인해 주시면 됩니다. 세팅 30분, 정리 20분이 필요합니다."}},
-    {"@type":"Question","name":"견적은 얼마나 걸리나요?","acceptedAnswer":{"@type":"Answer","text":"문의 접수 후 영업일 1일 이내 1차 회신드리고, 상담 후 2~3일 내 프로그램안과 견적서를 발송합니다."}}
+    {"@type":"Question","name":"견적은 얼마나 걸리나요?","acceptedAnswer":{"@type":"Answer","text":"문의 접수 후 영업일 2일 이내 1차 회신드리고, 상담 후 2~3일 내 프로그램안과 견적서를 발송합니다."}}
   ]
 }
 </script>
@@ -341,6 +341,16 @@ img{max-width:100%;display:block}
 }
 .mpill:hover,.mpill:focus-visible{box-shadow:0 2px 10px rgba(0,0,0,.14);transform:translateY(-1px)}
 .mpill::after{content:"＋";margin-left:7px;opacity:.45;font-size:11px}
+.mpill.is-open{background:var(--mood-accent);color:#fff}
+.mpill.is-open::after{content:"－";opacity:.8}
+/* 과정 미리보기 카드 */
+.cdeck{background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.95);border-left:3px solid var(--mood-accent);border-radius:var(--radius);padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;max-width:72ch}
+.cdeck__h{display:flex;align-items:center;gap:10px}
+.cdeck__h b{font-size:16px;font-weight:600;letter-spacing:-.02em;color:var(--mood-title)}
+.cdeck p{font-size:14px;line-height:1.75;color:var(--mood-title);opacity:.85}
+.cdeck__m{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:var(--mood-title)}
+.cdeck__m i{font-style:normal;color:var(--mood-accent);font-weight:600;margin-right:6px;font-size:12px}
+.cdeck .btn{align-self:flex-start;margin-top:4px}
 .mcols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .mcard{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px}
 .mcard h3{font-size:16.5px;color:var(--mood-title);transition:color .55s ease}
@@ -559,7 +569,7 @@ img{max-width:100%;display:block}
     <a class="btn btn--white" href="#inquiry">우리 조직 맞춤 문의</a>
     <a class="btn btn--ghost" href="#formats">프로그램 한눈에 보기</a>
   </div>
-  <p class="hero__note">12~150명 규모 대응 · 연회홀 단일 진행 또는 분반 동시 운영 · 전국 출강 · 영업일 1일 이내 회신</p>
+  <p class="hero__note">12~150명 규모 대응 · 연회홀 단일 진행 또는 분반 동시 운영 · 전국 출강 · 영업일 2일 이내 회신</p>
 </div></section>
 
 <!-- ══ 실적 스탯 ══ -->
@@ -611,7 +621,7 @@ img{max-width:100%;display:block}
   <div class="stack g10">
     <span class="kicker">진행 강사</span>
     <h2 class="h2">진단과 조향, 두 영역을 한 사람이 설계합니다</h2>
-    <p class="sub">성격진단과 아트·조향을 각각 다른 강사가 맡으면 두 시간이 따로 놉니다. 한 사람이 진단 해석부터 제작까지 설계해 흐름이 끊기지 않습니다. <b>설계는 대표강사가, 진행은 규모에 맞춘 팀이</b> 맡습니다.</p>
+    <p class="sub">진단과 제작을 다른 강사가 나눠 맡으면 흐름이 끊깁니다. 진단 해석부터 제작까지 <b>대표강사 한 사람이 설계</b>하고, 진행은 규모에 맞춰 팀이 함께합니다.</p>
   </div>
   <div class="tutor">
     <div class="tutor__l">
@@ -666,7 +676,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="team__i">
         <b>여러 교실 동시 진행</b>
-        <p>인원이 많으면 부서별로 나눠 같은 시간에 여러 교실에서 진행합니다. 전사원 90명을 3개 교실에서 동시에 진행한 사례가 있습니다. 연회홀처럼 큰 공간이면 한자리에서 150명까지 가능합니다.</p>
+        <p>인원이 많으면 부서별로 나눠 같은 시간에 여러 교실에서 진행합니다. 전사원 90명을 2개 교실에서 동시에 진행한 사례가 있습니다. 연회홀처럼 큰 공간이면 한자리에서 150명까지 가능합니다.</p>
       </div>
       <div class="team__i">
         <b>협회 자격 강사진</b>
@@ -794,10 +804,10 @@ img{max-width:100%;display:block}
         <dl class="kv">
           <div><dt>대상</dt><dd>연수원 · 워크숍 · 창립기념 · 1박 2일</dd></div>
           <div><dt>시간</dt><dd>4 ~ 6시간 <span style="color:var(--muted);font-size:12px">중식 제외</span></dd></div>
-          <div><dt>인원</dt><dd>30 ~ 150명</dd></div>
+          <div><dt>인원</dt><dd>10 ~ 150명</dd></div>
           <div><dt>활동</dt><dd>진단 · 아트 · 보드게임을 하루 흐름으로 조합</dd></div>
         </dl>
-        <p class="price">1회 150만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 6시간 30명</span></p>
+        <p class="price">1회 120만원~ <span style="font-size:12.5px;font-weight:400;color:var(--muted)">· 6시간 10명</span></p>
         <div class="fmt__acts">
           <a class="btn btn--navy btn--sm" href="#inquiry" data-fmt="종일형 (조합)">이 프로그램 문의</a>
           <a class="btn btn--outline btn--sm" href="#mood" data-tab="fullday">자세히</a>
@@ -805,11 +815,6 @@ img{max-width:100%;display:block}
       </div>
     </article>
   </div>
-  <p class="cap" style="text-align:center">
-    <b style="color:var(--navy)">연회홀·대강당이면 100명 이상도 한 번에 진행</b>합니다.
-    공간이 나뉘어 있거나 부서별로 따로 받고 싶으시면 <b>교실을 나눠 동시에</b> 돌릴 수도 있습니다 —
-    SCK 법인그룹 90명은 3개 교실에서 서로 다른 프로그램을 같은 시간에 진행했습니다.
-  </p>
 </div></section>
 
 <!-- ══ 플래그십 ══ -->
@@ -917,7 +922,7 @@ img{max-width:100%;display:block}
   </div>
   <div class="clients">
     <h4>그 밖의 주요 출강처</h4>
-    <p>SCK 법인그룹(전사원 90명 · 3개 교실 동시 진행) · 네이버파이낸셜 · 무신사 · 한국표준협회 · 파마리서치 ·
+    <p>SCK 법인그룹(전사원 90명 · 2개 교실 동시 진행) · 네이버파이낸셜 · 무신사 · 한국표준협회 · 파마리서치 ·
     BKL세무회계법인 · (주)SL · 한국광해광업공단 · 식품안전정보원 · 한국보건사회연구소 ·
     서울아리수 · 서울시교육청 교육연수원(4회) · 교육연구정보원 · 원주·양양속초·성북강북·경기구리남양주 교육지원청 ·
     충남교육청유교원 · 중장년내일센터(4회) · AK플라자 문화아카데미 · 홈플러스 문화센터 · 삼성 강남 컬처랩 ·
@@ -984,11 +989,12 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">서로를 “일하는 방식”으로만 알던 팀이, 성향으로 서로를 다시 읽는 시간입니다. 진단 결과를 눈으로 확인하고 그 자리에서 팀의 소통 규칙까지 함께 만듭니다.</p>
       <div class="pills">
-        <a class="mpill" href="#inquiry" data-course="PSN-101 MBTI 팀 커뮤니케이션">PSN-101 MBTI 팀 커뮤니케이션</a>
-        <a class="mpill" href="#inquiry" data-course="PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)">PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)</a>
-        <a class="mpill" href="#inquiry" data-course="PSN-201 MBTI 컬러 센트 향수">PSN-201 MBTI 컬러 센트 향수</a>
-        <a class="mpill" href="#inquiry" data-course="PSN-301 에니어그램 힐링">PSN-301 에니어그램 힐링</a>
+        <a class="mpill" href="#" data-course="PSN-101 MBTI 팀 커뮤니케이션">PSN-101 MBTI 팀 커뮤니케이션</a>
+        <a class="mpill" href="#" data-course="PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)">PSN-102 컬러 성격·심리 셀프진단 (자체 웹앱)</a>
+        <a class="mpill" href="#" data-course="PSN-201 MBTI 컬러 센트 향수">PSN-201 MBTI 컬러 센트 향수</a>
+        <a class="mpill" href="#" data-course="PSN-301 에니어그램 힐링">PSN-301 에니어그램 힐링</a>
       </div>
+      <div class="cdeck" hidden></div>
     </div>
     <div class="mcols">
       <div class="mcard">
@@ -1042,11 +1048,12 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">성과 이야기를 잠시 내려놓는 시간입니다. 색과 호흡, 향과 그림으로 감정을 정리하고 조직 안에서 회복할 여지를 만듭니다. 그림이 부담스러운 조직에는 향과 호흡으로만 가는 구성도 있습니다.</p>
       <div class="pills">
-        <a class="mpill" href="#inquiry" data-course="HLG-101 컬러 심리 진단">HLG-101 컬러 심리 진단</a>
-        <a class="mpill" href="#inquiry" data-course="HLG-102 오일파스텔 힐링 드로잉">HLG-102 오일파스텔 힐링 드로잉</a>
-        <a class="mpill" href="#inquiry" data-course="HLG-201 아로마 조향">HLG-201 아로마 조향</a>
-        <a class="mpill" href="#inquiry" data-course="HLG-202 아로마 호흡 힐링 · 디퓨저 제작">HLG-202 아로마 호흡 힐링 · 디퓨저 제작</a>
+        <a class="mpill" href="#" data-course="HLG-101 컬러 심리 진단">HLG-101 컬러 심리 진단</a>
+        <a class="mpill" href="#" data-course="HLG-102 오일파스텔 힐링 드로잉">HLG-102 오일파스텔 힐링 드로잉</a>
+        <a class="mpill" href="#" data-course="HLG-201 아로마 조향">HLG-201 아로마 조향</a>
+        <a class="mpill" href="#" data-course="HLG-202 아로마 호흡 힐링 · 디퓨저 제작">HLG-202 아로마 호흡 힐링 · 디퓨저 제작</a>
       </div>
+      <div class="cdeck" hidden></div>
     </div>
     <div class="mcols">
       <div class="mcard">
@@ -1098,11 +1105,12 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">손이 움직이면 대화가 열립니다. 흔한 만들기 체험이 아니라 감정을 알아차리고 스스로를 돌보는 시간으로 설계합니다. 결과물을 가져갈 수 있어 창립기념·연말 행사처럼 인원이 많은 자리에서 특히 잘 맞습니다.</p>
       <div class="pills">
-        <a class="mpill" href="#inquiry" data-course="ART-101 컬러 센트 향수">ART-101 컬러 센트 향수</a>
-        <a class="mpill" href="#inquiry" data-course="ART-102 아로마 디퓨저">ART-102 아로마 디퓨저</a>
-        <a class="mpill" href="#inquiry" data-course="ART-103 하바리움 플라워펜">ART-103 하바리움 플라워펜</a>
-        <a class="mpill" href="#inquiry" data-course="ART-201 명리 조향 (사주 기반)">ART-201 명리 조향 (사주 기반)</a>
+        <a class="mpill" href="#" data-course="ART-101 컬러 센트 향수">ART-101 컬러 센트 향수</a>
+        <a class="mpill" href="#" data-course="ART-102 아로마 디퓨저">ART-102 아로마 디퓨저</a>
+        <a class="mpill" href="#" data-course="ART-103 하바리움 플라워펜">ART-103 하바리움 플라워펜</a>
+        <a class="mpill" href="#" data-course="ART-201 명리 조향 (사주 기반)">ART-201 명리 조향 (사주 기반)</a>
       </div>
+      <div class="cdeck" hidden></div>
     </div>
     <div class="mcols">
       <div class="mcard">
@@ -1153,8 +1161,9 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">컬러로 서로의 기질을 확인한 뒤, 그 결과를 들고 대형 보드게임 판으로 넘어갑니다. 가벼운 질문에서 시작해 점점 깊은 대화로 이어지는 구조라, 단순한 놀이로 끝나지 않습니다. <b>자체 개발한 국내 유일 컬러테라피 대화형 보드게임</b>이며, 개발자와 컬러보드게임지도사 과정을 이수한 전문 강사가 진행합니다.</p>
       <div class="pills">
-        <a class="mpill" href="#inquiry" data-course="GME-101 레인보우 프리즘">GME-101 레인보우 프리즘</a>
+        <a class="mpill" href="#" data-course="GME-101 레인보우 프리즘">GME-101 레인보우 프리즘</a>
       </div>
+      <div class="cdeck" hidden></div>
     </div>
     <div class="mcols">
       <div class="mcard">
@@ -1206,11 +1215,12 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">도구 소개로 끝나지 않습니다. 참가자가 실제로 쓰는 문서와 업무를 가져와, 교육이 끝나면 바로 쓸 수 있는 상태로 돌아가게 합니다. ChatGPT 3.5 출시 때부터 실무에 써 온 강사가 진행하며, 공공기관 AI 도입 특강 경험이 있습니다. <b>콘텐츠 마케팅·브랜딩</b>은 2012년부터의 마케팅 실무 경험을 그대로 옮긴 과정으로, 소상공인·보험설계사·1인기업 대상 SNS 전략 특강으로도 진행합니다.</p>
       <div class="pills">
-        <a class="mpill" href="#inquiry" data-course="AIW-101 생성형 AI 실무 활용">AIW-101 생성형 AI 실무 활용</a>
-        <a class="mpill" href="#inquiry" data-course="AIW-102 Canva · NotebookLM 활용">AIW-102 Canva · NotebookLM 활용</a>
-        <a class="mpill" href="#inquiry" data-course="AIW-201 업무 자동화">AIW-201 업무 자동화</a>
-        <a class="mpill" href="#inquiry" data-course="AIW-301 콘텐츠 마케팅 · 브랜딩">AIW-301 콘텐츠 마케팅 · 브랜딩</a>
+        <a class="mpill" href="#" data-course="AIW-101 생성형 AI 실무 활용">AIW-101 생성형 AI 실무 활용</a>
+        <a class="mpill" href="#" data-course="AIW-102 Canva · NotebookLM 활용">AIW-102 Canva · NotebookLM 활용</a>
+        <a class="mpill" href="#" data-course="AIW-201 업무 자동화">AIW-201 업무 자동화</a>
+        <a class="mpill" href="#" data-course="AIW-301 콘텐츠 마케팅 · 브랜딩">AIW-301 콘텐츠 마케팅 · 브랜딩</a>
       </div>
+      <div class="cdeck" hidden></div>
     </div>
     <div class="mcols">
       <div class="mcard">
@@ -1260,11 +1270,12 @@ img{max-width:100%;display:block}
     <div class="stack g14">
       <p class="lead">연수원 일정이나 워크숍처럼 반나절 이상을 채워야 하는 자리입니다. 2시간짜리를 억지로 늘이지 않고, 진단·아트·보드게임을 목적에 맞게 조합해 하루 흐름으로 다시 짭니다. 1박 2일 연수의 한 파트만 맡는 구성도 많습니다.</p>
       <div class="pills">
-        <a class="mpill" href="#inquiry" data-course="FDY-101 종일 조합 워크숍 (6시간)">FDY-101 종일 조합 워크숍 (6시간)</a>
-        <a class="mpill" href="#inquiry" data-course="FDY-102 반일 조합 (4시간)">FDY-102 반일 조합 (4시간)</a>
-        <a class="mpill" href="#inquiry" data-course="FDY-201 다회차 · 다교실 운영">FDY-201 다회차 · 다교실 운영</a>
-        <a class="mpill" href="#inquiry" data-course="FDY-301 1박 2일 연수 파트">FDY-301 1박 2일 연수 파트</a>
+        <a class="mpill" href="#" data-course="FDY-101 종일 조합 워크숍 (6시간)">FDY-101 종일 조합 워크숍 (6시간)</a>
+        <a class="mpill" href="#" data-course="FDY-102 반일 조합 (4시간)">FDY-102 반일 조합 (4시간)</a>
+        <a class="mpill" href="#" data-course="FDY-201 다회차 · 다교실 운영">FDY-201 다회차 · 다교실 운영</a>
+        <a class="mpill" href="#" data-course="FDY-301 1박 2일 연수 파트">FDY-301 1박 2일 연수 파트</a>
       </div>
+      <div class="cdeck" hidden></div>
     </div>
     <div class="mcols">
       <div class="mcard">
@@ -1297,13 +1308,13 @@ img{max-width:100%;display:block}
       <h3>구성별 견적</h3>
       <p style="font-size:13.5px;color:var(--mood-title);opacity:.8;line-height:1.7;margin-bottom:4px">6시간 기준이며 <b>가져가시는 제작물 수</b>로 금액이 나뉩니다. 출장비 포함이며(지역에 따라 5~8만원), 21명부터 10명당 보조 강사 1인이 동행합니다.</p>
       <div class="ptablewrap"><table class="ptable">
-        <thead><tr><th>구성</th><th>1인당</th><th>30명</th><th>50명</th><th>80명</th></tr></thead>
+        <thead><tr><th>구성</th><th>1인당</th><th>10명</th><th>30명</th><th>50명</th><th>80명</th></tr></thead>
         <tbody>
-          <tr><td>종일 6시간 · 제작 1종</td><td class="per">1.0만</td><td class="n">150~153만</td><td class="n">200~203만</td><td class="n">275~278만</td></tr>
-          <tr><td>종일 6시간 · 제작 2종</td><td class="per">2.0만</td><td class="n">180~183만</td><td class="n">250~253만</td><td class="n">355~358만</td></tr>
+          <tr><td>종일 6시간 · 제작 1종</td><td class="per">1.0만</td><td class="n">120~123만</td><td class="n">150~153만</td><td class="n">200~203만</td><td class="n">275~278만</td></tr>
+          <tr><td>종일 6시간 · 제작 2종</td><td class="per">2.0만</td><td class="n">130~133만</td><td class="n">180~183만</td><td class="n">250~253만</td><td class="n">355~358만</td></tr>
         </tbody>
       </table></div>
-      <p class="cap" style="color:var(--mood-title);opacity:.7">컬러 센트 향수 30ml나 오일파스텔처럼 단가가 높은 활동을 고르시면 재료비가 달라집니다. 반일(4시간) 구성과 150명 이상, 다교실 동시 진행은 별도로 산정해 드립니다.</p>
+      <p class="cap" style="color:var(--mood-title);opacity:.7"><b>10명 이하는 종일 최소 금액</b>을 적용합니다. 컬러 센트 향수 30ml나 오일파스텔처럼 단가가 높은 활동을 고르시면 재료비가 달라집니다. 반일(4시간) 구성과 150명 이상, 다교실 동시 진행은 별도로 산정해 드립니다.</p>
     </div>
 
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="종일형 (조합)">이 프로그램 문의</a></div>
@@ -1452,7 +1463,7 @@ img{max-width:100%;display:block}
     </details>
     <details>
       <summary>견적은 얼마나 걸리나요?</summary>
-      <p>문의 접수 후 영업일 1일 이내 1차 회신드리고, 상담 후 2~3일 내 프로그램안과 견적서를 문서로 발송합니다.</p>
+      <p>문의 접수 후 영업일 2일 이내 1차 회신드리고, 상담 후 2~3일 내 프로그램안과 견적서를 문서로 발송합니다.</p>
     </details>
   </div>
 </div></section>
@@ -1555,7 +1566,7 @@ img{max-width:100%;display:block}
         <div class="f f--full">
           <button class="btn btn--navy btn--full" type="submit" id="inqSubmit">교육 문의 보내기</button>
           <p class="formmsg" id="inqMsg" role="status" aria-live="polite" hidden></p>
-          <p class="cap" style="margin-top:10px">영업일 기준 1일 이내 담당자가 연락드립니다.</p>
+          <p class="cap" style="margin-top:10px">영업일 기준 2일 이내 담당자가 연락드립니다.</p>
         </div>
       </div>
     </form>
@@ -1731,17 +1742,64 @@ img{max-width:100%;display:block}
     a.addEventListener("click", function(){ choose(fmtRadios, a.dataset.fmt, "fmtChips"); });
   });
 
-  /* 과정 코드 칩 — 누르면 포맷이 잡히고 과정명이 문의에 실린다 */
   var courseInput = document.getElementById("course");
-  document.querySelectorAll(".mpill[data-course]").forEach(function(a){
-    a.addEventListener("click", function(){
-      var panel = a.closest(".panel");
-      var key = panel ? panel.id.replace("panel-","") : "";
-      if(MOOD[key]) choose(fmtRadios, MOOD[key].name, "fmtChips");
-      if(courseInput){
-        courseInput.value = a.dataset.course;
-        flash(courseInput.closest(".f"));
-      }
+
+  /* ── 과정 미리보기 데이터 — 칩을 누르면 아래 카드에 펼쳐진다 ── */
+  var COURSES = {
+    "PSN-101":{t:"MBTI 팀 커뮤니케이션",d:"사전 온라인 검사(Form M/Q)로 유형을 받아 오고, 교육 당일은 결과지 해석과 유형을 섞어 짠 조에서 협업 방식을 비교하는 데 씁니다. 유형별 피드백 화법과 갈등이 생기는 지점까지 정리합니다.",m:"120분 · 12~50명 · 사전 검사 포함",r:"유형별 소통 워크시트"},
+    "PSN-102":{t:"컬러 성격·심리 셀프진단",d:"센터가 개발한 웹앱 진단도구로 컬러 성격 유형과 추구 컬러를 진단합니다. 결과를 강점과 소통 방식으로 풀고, 컬러링 코드 활동으로 서로의 성향을 눈으로 비교합니다. 공무원 연수에서 가장 많이 나가는 구성입니다.",m:"90~120분 · 12~50명",r:"개인 진단 결과지"},
+    "PSN-201":{t:"MBTI 컬러 센트 향수",d:"MBTI 결과 해석과 조별 협업 비교를 먼저 하고, 진단 결과로 나의 채움 컬러를 찾은 뒤 시향을 거쳐 컬러 센트 향수를 만듭니다. 진단과 제작이 한 흐름으로 이어지는 성격진단 라인의 대표 구성입니다.",m:"120분 · 12~50명 · 사전 검사 포함",r:"컬러 센트 향수 10ml 또는 30ml"},
+    "PSN-301":{t:"에니어그램 힐링",d:"9가지 성격 유형으로 동기와 두려움까지 들여다보는 구성입니다. MBTI보다 깊은 심리 탐색이 필요하거나, 이미 MBTI를 여러 번 한 조직에 제안합니다.",m:"120분 · 12~40명",r:"유형별 해석 워크시트"},
+    "HLG-101":{t:"컬러 심리 진단",d:"컬러 심리 진단지로 지금의 감정과 에너지 상태를 확인하고, 컬러별 스트레스 해소법과 나에게 필요한 채움 컬러를 찾습니다. 제작물 없이 진단과 해석으로만 가는 가장 가벼운 힐링 구성입니다.",m:"90분 · 12~50명",r:"개인 컬러 심리 결과지"},
+    "HLG-102":{t:"오일파스텔 힐링 드로잉",d:"컬러 심리 해석으로 채움 컬러를 찾은 뒤, 그러데이션 한 가지 기법으로 나만의 하늘을 그립니다. 그림 경험이 없어도 완성도가 나오고, 나무 액자에 마감해 자리에 둡니다.",m:"120분 · 12~40명",r:"오일파스텔 작품 + 나무 액자"},
+    "HLG-201":{t:"아로마 조향",d:"컬러 심리로 지금 상태를 확인한 뒤 아로마 오일을 시향하고, 나에게 필요한 향을 골라 직접 블렌딩합니다. 향은 감정 전환이 빠른 도구라 감정노동 직무에서 반응이 좋습니다.",m:"90~120분 · 12~50명",r:"개인 블렌딩 아로마"},
+    "HLG-202":{t:"아로마 호흡 힐링 · 디퓨저 제작",d:"컬러 심리와 스트레스 해소법을 짚고, 향기와 호흡으로 자기돌봄 시간을 가진 뒤 아로마 디퓨저를 만듭니다. 그림이 부담스러운 조직에 향과 호흡으로만 가는 구성입니다.",m:"90~120분 · 12~50명",r:"아로마 디퓨저"},
+    "ART-101":{t:"컬러 센트 향수",d:"컬러 게임으로 열고 자기보고식 진단으로 성향을 확인한 뒤, 내 컬러와 동료의 컬러를 비교하며 맞는 소통법을 찾습니다. 마지막에 채움 컬러를 향으로 옮겨 컬러 센트 향수를 만듭니다. 대표 프로그램입니다.",m:"120분 · 12~150명",r:"컬러 센트 향수 30ml"},
+    "ART-102":{t:"아로마 디퓨저",d:"컬러 진단과 소통 세션은 동일하고, 제작 활동으로 아로마 디퓨저를 만듭니다. 재료비가 가벼워 인원이 많은 행사에 맞습니다.",m:"90~120분 · 12~150명",r:"아로마 디퓨저"},
+    "ART-103":{t:"하바리움 플라워펜",d:"컬러 진단으로 나에게 부족한 에너지 컬러를 찾고, 그 색의 꽃과 오일을 투명한 펜에 담습니다. 책상에 두고 쓰는 물건이라 교육 뒤에도 이야깃거리가 남습니다.",m:"90~120분 · 12~150명",r:"하바리움 플라워펜"},
+    "ART-201":{t:"명리 조향 (사주 기반)",d:"생년월일로 오행의 균형을 보고, 부족한 기운을 채우는 향을 조향합니다. 컬러 진단 대신 명리를 쓰는 구성이라 신년·연말 행사에서 반응이 큽니다.",m:"120분 · 12~50명",r:"개인 맞춤 향수"},
+    "GME-101":{t:"레인보우 프리즘",d:"컬러 성격·심리 진단과 소통법을 먼저 다루고, 그 결과를 들고 대형 보드게임 판으로 넘어갑니다. 가벼운 질문에서 깊은 대화로 이어지는 구조라 처음 만난 팀에도 맞습니다. 자체 개발한 국내 유일 컬러테라피 대화형 보드게임입니다.",m:"180분 · 12~100명 · 조별 6~8명",r:"팀별 소통 결과 공유"},
+    "AIW-101":{t:"생성형 AI 실무 활용",d:"부서별 반복 업무를 먼저 진단하고, 참가자가 실제로 쓰는 문서로 프롬프트를 작성합니다. 자료 정리·요약 자동화를 따라 해 보고, 개인별 적용 계획 1건을 쓰고 돌아갑니다.",m:"120~180분 · 10~30명 · 노트북 필수",r:"업무 적용 프롬프트 세트"},
+    "AIW-102":{t:"Canva · NotebookLM 활용",d:"Canva로 보고서·홍보물을 빠르게 만들고, NotebookLM에 문서를 넣어 요약·질의하는 법을 익힙니다. 디자인·문서 작업이 잦은 부서에 맞습니다.",m:"120~180분 · 10~30명 · 노트북 필수",r:"직접 만든 자료 1건"},
+    "AIW-201":{t:"업무 자동화",d:"반복되는 입력·정리·보고 작업을 골라 AI로 흐름을 다시 짭니다. 도구 소개가 아니라 참가자의 실제 업무를 가져와 그 자리에서 자동화 구조를 만듭니다.",m:"180분 · 10~20명 · 노트북 필수",r:"자동화 워크플로 1건"},
+    "AIW-301":{t:"콘텐츠 마케팅 · 브랜딩",d:"브랜드 정체성을 먼저 정리하고, 그 말투와 가치관을 AI에 학습시켜 나만의 글쓰기 챗봇을 세팅합니다. 소상공인·1인기업·보험설계사 대상 SNS 전략 특강으로도 진행합니다.",m:"180~240분 · 10~20명 · 노트북·유료 AI 계정",r:"브랜드 맞춤 AI 글쓰기 챗봇"},
+    "FDY-101":{t:"종일 조합 워크숍 (6시간)",d:"오전은 컬러 진단과 소통법, 오후는 채움 컬러를 찾은 뒤 선택 활동 두 가지를 이어 갑니다. 향수·디퓨저·오일파스텔·보드게임 중에서 조직 목적에 맞게 조합합니다.",m:"6시간 (중식 제외) · 10~150명",r:"제작물 1~2종 + 진단 결과지"},
+    "FDY-102":{t:"반일 조합 (4시간)",d:"컬러 진단과 소통 세션에 선택 활동 한 가지를 붙이는 구성입니다. 오전·오후 반일 연수나 워크숍 첫날 일정에 맞습니다.",m:"4시간 · 10~150명",r:"제작물 1종 + 진단 결과지"},
+    "FDY-201":{t:"다회차 · 다교실 운영",d:"부서별로 나눠 같은 시간에 여러 교실에서 진행하거나, 같은 프로그램을 여러 날에 걸쳐 돌립니다. 주강사가 여러 명 들어가므로 인원과 교실 수를 알려주시면 산정해 드립니다.",m:"교실당 30~50명 · 회차 협의",r:"회차별 진행 보고"},
+    "FDY-301":{t:"1박 2일 연수 파트",d:"기관 연수 프로그램 가운데 힐링·소통 파트만 맡는 구성입니다. 연수원 일정표에 맞춰 2~3시간 블록으로 들어가며, 160명 규모까지 진행한 사례가 있습니다.",m:"2~3시간 블록 · 30~160명",r:"제작물 1종 + 진단 결과지"}
+  };
+
+  /* 칩 클릭 → 같은 패널의 미리보기 카드에 펼치기. 다시 누르면 닫힘 */
+  function pickCourse(name, key){
+    if(MOOD[key]) choose(fmtRadios, MOOD[key].name, "fmtChips");
+    if(courseInput){ courseInput.value = name; flash(courseInput.closest(".f")); }
+  }
+  document.querySelectorAll(".pills").forEach(function(pills){
+    var deck = pills.nextElementSibling;
+    if(!deck || !deck.classList.contains("cdeck")) return;
+    var links = Array.prototype.slice.call(pills.querySelectorAll(".mpill[data-course]"));
+    links.forEach(function(a){
+      a.setAttribute("role","button"); a.setAttribute("aria-expanded","false");
+      a.addEventListener("click", function(e){
+        e.preventDefault();
+        var wasOpen = a.classList.contains("is-open");
+        links.forEach(function(x){ x.classList.remove("is-open"); x.setAttribute("aria-expanded","false"); });
+        if(wasOpen){ deck.hidden = true; return; }
+        a.classList.add("is-open"); a.setAttribute("aria-expanded","true");
+        var name = a.dataset.course, code = name.split(" ")[0];
+        var c = COURSES[code] || {t:name.slice(code.length+1), d:"", m:"", r:""};
+        var panel = a.closest(".panel"), key = panel ? panel.id.replace("panel-","") : "";
+        deck.innerHTML =
+          '<div class="cdeck__h"><span class="code">'+code+'</span><b>'+c.t+'</b></div>' +
+          '<p>'+c.d+'</p>' +
+          '<div class="cdeck__m">' +
+            (c.m ? '<span><i>구성</i>'+c.m+'</span>' : '') +
+            (c.r ? '<span><i>결과물</i>'+c.r+'</span>' : '') +
+          '</div>' +
+          '<a class="btn btn--navy btn--sm" href="#inquiry">이 과정으로 문의</a>';
+        deck.hidden = false;
+        deck.querySelector("a.btn").addEventListener("click", function(){ pickCourse(name, key); });
+      });
     });
   });
 
@@ -1807,7 +1865,7 @@ img{max-width:100%;display:block}
       fetch(form.action, { method:"POST", mode:"no-cors", body:new FormData(form) })
         .then(function(){
           form.reset(); paintChips();
-          showMsg("ok", "문의가 접수되었습니다. 영업일 기준 1일 이내에 담당자가 연락드리겠습니다.");
+          showMsg("ok", "문의가 접수되었습니다. 영업일 기준 2일 이내에 담당자가 연락드리겠습니다.");
         })
         .catch(function(){
           showMsg("err", "전송에 실패했습니다. 잠시 후 다시 시도하시거나 " + CONTACT + " 로 연락 주세요.");
