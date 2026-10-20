@@ -363,7 +363,9 @@ img{max-width:100%;display:block}
 .item{margin:0;display:flex;flex-direction:column;gap:7px}
 .item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block;background:rgba(0,0,0,.04)}
 .item figcaption{font-size:12.5px;color:var(--mood-title);line-height:1.4}
-@media (max-width:640px){.items{display:flex;overflow-x:auto;gap:10px;padding-bottom:4px;scrollbar-width:none}.items::-webkit-scrollbar{display:none}.item{flex:0 0 42%}}
+.items--3{grid-template-columns:repeat(3,1fr)}
+.item--wide img{aspect-ratio:4/3}
+@media (max-width:640px){.items{display:flex;overflow-x:auto;gap:10px;padding-bottom:4px;scrollbar-width:none}.items::-webkit-scrollbar{display:none}.item{flex:0 0 42%}.item--wide{flex:0 0 68%}}
 .mcard{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px}
 .mcard h3{font-size:16.5px;color:var(--mood-title);transition:color .55s ease}
 .mcard li{font-size:14px;color:var(--mood-title);opacity:.82;padding:7px 0;display:flex;gap:9px;line-height:1.65;border-bottom:1px solid rgba(0,0,0,.06)}
@@ -948,7 +950,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
 <section class="sec sec--off" id="formats"><div class="wrap stack g28">
   <div class="stack g10">
     <span class="kicker">프로그램 6포맷</span>
-    <h2 class="h2">목적부터 고르세요. 프로그램은 저희가 맞춥니다</h2>
+    <h2 class="h2">목적부터 고르세요. 프로그램은 저희가 맞춤 기획해드립니다</h2>
     <p class="sub">아래는 <b>최소 인원 기준 1회 최저 예산</b>입니다.<br>프로그램 상세의 <b>구성별·인원별 금액표</b>에서 예산에 맞는 구성을 직접 확인하실 수 있습니다.<br>예산이 먼저 정해져 있다면 말씀해 주세요 — 시간과 구성을 조정해 맞춰 드립니다.</p>
   </div>
 
@@ -1212,7 +1214,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <h3>가져가시는 제작물 <span class="code">실제 제작물 사진</span></h3>
       <div class="items">
         <figure class="item"><img src="assets/item-04.jpg" alt="오일파스텔 드로잉 실제 제작물" loading="lazy"><figcaption>오일파스텔 드로잉</figcaption></figure>
-        <figure class="item"><img src="assets/item-08.jpg" alt="컬러 아로마 디퓨저 실제 제작물" loading="lazy"><figcaption>컬러 아로마 디퓨저</figcaption></figure>
+        <figure class="item"><img src="assets/item-08.jpg" alt="아로마 디퓨저 개별 케이스 실제 제작물" loading="lazy"><figcaption>아로마 디퓨저 (개별 케이스)</figcaption></figure>
         <figure class="item"><img src="assets/item-06.jpg" alt="아로마 플라워 디퓨저 실제 제작물" loading="lazy"><figcaption>아로마 플라워 디퓨저</figcaption></figure>
         <figure class="item"><img src="assets/item-05.jpg" alt="컬러 미니 아로마 디퓨저 실제 제작물" loading="lazy"><figcaption>컬러 미니 아로마 디퓨저</figcaption></figure>
       </div>
@@ -1284,7 +1286,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
         <figure class="item"><img src="assets/item-05.jpg" alt="컬러 미니 아로마 디퓨저 실제 제작물" loading="lazy"><figcaption>컬러 미니 아로마 디퓨저</figcaption></figure>
         <figure class="item"><img src="assets/item-06.jpg" alt="아로마 플라워 디퓨저 실제 제작물" loading="lazy"><figcaption>아로마 플라워 디퓨저</figcaption></figure>
         <figure class="item"><img src="assets/item-07.jpg" alt="컬러 아로마 디퓨저 T 실제 제작물" loading="lazy"><figcaption>컬러 아로마 디퓨저 T</figcaption></figure>
-        <figure class="item"><img src="assets/item-08.jpg" alt="컬러 아로마 디퓨저 실제 제작물" loading="lazy"><figcaption>컬러 아로마 디퓨저</figcaption></figure>
+        <figure class="item"><img src="assets/item-08.jpg" alt="아로마 디퓨저 개별 케이스 실제 제작물" loading="lazy"><figcaption>아로마 디퓨저 (개별 케이스)</figcaption></figure>
       </div>
       <p class="cap" style="color:var(--mood-title);opacity:.7">사진은 실제 수업에서 만든 제작물입니다. 금액은 아래 표에서 확인하세요.</p>
     </div>
@@ -1355,6 +1357,16 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       </table></div>
       <p class="cap" style="color:var(--mood-title);opacity:.7">조별 6~8명으로 편성합니다. 연회홀처럼 넓은 공간이면 100명도 같은 판에서 한 번에 진행하며, 조 수에 맞춰 운영 인력이 함께 들어갑니다.</p>
     </div>
+    <div class="mcard">
+      <h3>현장 사진 <span class="code">레인보우 프리즘 진행 장면</span></h3>
+      <div class="items items--3">
+        <figure class="item item--wide"><img src="assets/game-01.jpg" alt="레인보우 프리즘 보드게임 진행 — 컬러 카드와 말판" loading="lazy"><figcaption>컬러 카드로 자기소개</figcaption></figure>
+        <figure class="item item--wide"><img src="assets/game-02.jpg" alt="레인보우 프리즘 보드게임 진행 — 조별 플레이" loading="lazy"><figcaption>조별 진행 · 질문 카드로 대화</figcaption></figure>
+        <figure class="item item--wide"><img src="assets/game-03.jpg" alt="레인보우 프리즘 보드게임 말판 전체" loading="lazy"><figcaption>레인보우 프리즘 말판</figcaption></figure>
+      </div>
+      <p class="cap" style="color:var(--mood-title);opacity:.7">서울시교육청 교육연수원 힐링테라피 연수 현장입니다. 교구는 자체 기획·제작·유통합니다.</p>
+    </div>
+
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="컬러 보드게임">이 프로그램 문의</a></div>
   </div>
 
