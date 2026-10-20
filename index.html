@@ -273,13 +273,7 @@ img{max-width:100%;display:block}
 
 /* ── 실적/사례 ── */
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-/* 10장: 넓은 화면에서 4+4+2, 마지막 두 장은 가운데 */
-@media (min-width:1000px){
-  .cases{grid-template-columns:repeat(8,1fr)}
-  .cases > .case{grid-column:span 2}
-  .cases > .case:nth-child(9){grid-column:3 / span 2}
-  .cases > .case:nth-child(10){grid-column:5 / span 2}
-}
+@media (min-width:1000px){.cases{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:820px){.cases{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.cases{grid-template-columns:1fr}}
 .case{
@@ -700,7 +694,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       </div>
       <div class="team__i">
         <b>여러 교실 동시 진행</b>
-        <p>인원이 많으면 부서별로 회차를 나누거나 같은 시간에 여러 교실에서 진행합니다. 160명을 2회로 나눠 진행한 사례가 있고, 연회홀처럼 큰 공간이면 한자리에서 150명까지 가능합니다.</p>
+        <p>인원이 많으면 부서별로 회차를 나누거나 같은 시간에 여러 교실에서 진행합니다. 160명을 2회로 나눠 진행한 사례와 호텔 연회장에서 100명을 한자리에서 진행한 사례가 있고, 공간이 되면 150명까지 가능합니다.</p>
       </div>
       <div class="team__i">
         <b>협회 자격 강사진</b>
@@ -951,12 +945,28 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
         <div class="tagline"><span class="tag">협회·교육기관</span><span class="tag">MBTI</span><span class="tag">2024</span></div>
       </div>
     </article>
+    <article class="case">
+      <div class="case__img" style="padding:0"><img src="assets/case-11.jpg" alt="서울시교육청 교육연수원 힐링테라피 연수 컬러아트테라피 강의 현장" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="case__bd">
+        <b>서울시교육청 교육연수원 <span style="font-size:12px;color:var(--teal)">· 4회</span></b>
+        <span class="case__meta">힐링테라피 연수 · 종일(09~17시) 2일 · 진단 → 플라워펜 → 보드게임 → 오일파스텔</span>
+        <div class="tagline"><span class="tag">교육공무원 연수</span><span class="tag">종일형</span><span class="tag">2024</span></div>
+      </div>
+    </article>
+    <article class="case">
+      <div class="case__img" style="padding:0"><img src="assets/case-12.jpg" alt="서울시교육청 초등특수늘봄지원실장 연수 양평 호텔 연회장 100명 현장" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="case__bd">
+        <b>서울시교육청 초등특수늘봄지원실장 연수</b>
+        <span class="case__meta">MBTI 소통 힐링 + 컬러 센트 향수 · 100명 · 1박 2일 연수 중 한 파트 · 양평</span>
+        <div class="tagline"><span class="tag">교직원 연수</span><span class="tag">대규모</span><span class="tag">2025</span></div>
+      </div>
+    </article>
   </div>
   <div class="clients">
     <h4>그 밖의 주요 출강처</h4>
     <p>SCK 법인그룹 · 네이버파이낸셜 · 무신사 · 파마리서치 ·
     BKL세무회계법인 · (주)SL · 한국광해광업공단 · 식품안전정보원 · 한국보건사회연구소 ·
-    서울아리수 · 서울시교육청 교육연수원(4회) · 교육연구정보원 · 원주·양양속초·성북강북·경기구리남양주 교육지원청 ·
+    서울아리수 · 교육연구정보원 · 원주·양양속초·성북강북·경기구리남양주 교육지원청 ·
     충남교육청유교원 · 중장년내일센터(4회) · AK플라자 문화아카데미 · 홈플러스 문화센터 · 삼성 강남 컬처랩 ·
     군부대 · 문화재단 등</p>
   </div>
@@ -977,6 +987,13 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <div class="rev__bd">
         <q>참여자 만족도가 정말 높았어요. 그래서 이후 다른 지역 센터에서도 강의를 요청드려요.</q>
         <cite>서울 중장년 내일센터 · 담당자 — 교육 후 다른 지역 센터 강의로 이어졌습니다</cite>
+      </div>
+    </div>
+    <div class="rev rev--wide">
+      <span class="rev__tag">부서 전체로 재요청</span>
+      <div class="rev__bd">
+        <q>가장 재미있게 들은 연수였습니다! 다음엔 우리 부서 전체가 함께하고 싶어요.</q>
+        <cite>서울시교육청 초등특수늘봄지원실장 연수 · 참가자</cite>
       </div>
     </div>
     <div class="rev">
@@ -1319,7 +1336,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <h3 class="mh">하루를 통째로<br>맡기셔도 됩니다</h3>
     </div>
     <div class="stack g14">
-      <p class="lead">연수원 일정이나 워크숍처럼 반나절 이상을 채워야 하는 자리입니다. 2시간짜리를 억지로 늘이지 않고, 진단·아트·보드게임을 목적에 맞게 조합해 하루 흐름으로 다시 짭니다. 1박 2일 연수의 한 파트만 맡는 구성도 많습니다.</p>
+      <p class="lead">연수원 일정이나 워크숍처럼 반나절 이상을 채워야 하는 자리입니다. 2시간짜리를 억지로 늘이지 않고, 진단·아트·보드게임을 목적에 맞게 조합해 하루 흐름으로 다시 짭니다.<br>서울시교육청 교육연수원 힐링테라피 연수(09~17시, 2일)와 늘봄지원실장 1박 2일 연수(100명)가 이 구성으로 진행됐습니다.</p>
       <div class="pills">
         <a class="mpill" href="#" data-course="FDY-101 종일 조합 워크숍 (6시간)">FDY-101 종일 조합 워크숍 (6시간)</a>
         <a class="mpill" href="#" data-course="FDY-102 반일 조합 (4시간)">FDY-102 반일 조합 (4시간)</a>
