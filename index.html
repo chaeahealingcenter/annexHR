@@ -1168,7 +1168,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <p class="cap" style="color:var(--mood-title);opacity:.7">정식검사는 MBTI Form M/Q 공식 도구를 사용하며 사전에 온라인으로 진행합니다. 50명을 넘으면 별도 견적으로 안내드립니다.</p>
     </div>
 
-    <div class="mcard">
+    <div class="mcard photos">
       <h3>현장 사진 <span class="code">자체 웹앱 셀프진단 진행 장면</span></h3>
       <div class="items items--3">
         <figure class="item item--wide" style="grid-column:1 / span 2"><img src="assets/webapp-01.jpg" alt="국립완주문화유산연구소 강의 — 자체 웹앱 '컬러로 보는 현재의 나' 진단 화면" loading="lazy"><figcaption>참가자가 각자 스마트폰으로 진단하고, 결과를 화면에서 함께 봅니다</figcaption></figure>
@@ -1243,6 +1243,8 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <p class="cap" style="color:var(--mood-title);opacity:.7">오일파스텔 재료비는 <b>20명까지 1인 2.5만원, 21명부터 2만원</b>으로 내려갑니다(누진 적용). 오일파스텔은 개별 지도가 필요해 40명까지 운영하며, 그 이상은 교실을 나눠 동시에 진행합니다. 아로마 디퓨저 구성은 더 큰 인원도 가능합니다.</p>
     </div>
 
+    <div class="mcard photos"></div>
+
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="명상·힐링">이 프로그램 문의</a></div>
   </div>
 
@@ -1313,6 +1315,8 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <p class="cap" style="color:var(--mood-title);opacity:.7">제작물은 하바리움 플라워 바틀·펜, 아로마 디퓨저 4종, 컬러 키링, 컬러풀 소주잔, 글래스 타일 티코스터, 석고 방향제, 롤온 향수 등에서 고르실 수 있습니다. 제작물 없이 진단·소통 세션만 진행하는 구성도 가능합니다.</p>
     </div>
 
+    <div class="mcard photos"></div>
+
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="아트테라피">이 프로그램 문의</a></div>
   </div>
 
@@ -1367,7 +1371,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       </table></div>
       <p class="cap" style="color:var(--mood-title);opacity:.7">조별 6~8명으로 편성합니다. 연회홀처럼 넓은 공간이면 100명도 같은 판에서 한 번에 진행하며, 조 수에 맞춰 운영 인력이 함께 들어갑니다.</p>
     </div>
-    <div class="mcard">
+    <div class="mcard photos">
       <h3>현장 사진 <span class="code">레인보우 프리즘 진행 장면</span></h3>
       <div class="items items--3">
         <figure class="item item--wide"><img src="assets/game-01.jpg" alt="레인보우 프리즘 보드게임 진행 — 컬러 카드와 말판" loading="lazy"><figcaption>컬러 카드로 자기소개</figcaption></figure>
@@ -1432,6 +1436,8 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <p class="cap" style="color:var(--mood-title);opacity:.7">3시간 심화 과정과 전일제 과정은 별도 견적입니다. 조직의 실제 업무 문서를 미리 받아 실습 과제로 구성합니다.</p>
     </div>
 
+    <div class="mcard photos"></div>
+
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="AI·업무역량">이 프로그램 문의</a></div>
   </div>
 
@@ -1490,6 +1496,8 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       </table></div>
       <p class="cap" style="color:var(--mood-title);opacity:.7"><b>10명 이하는 종일 최소 금액</b>을 적용합니다. 컬러 센트 향수 30ml나 오일파스텔처럼 단가가 높은 활동을 고르시면 재료비가 달라집니다. 반일(4시간) 구성과 150명 이상, 다교실 동시 진행은 별도로 산정해 드립니다.</p>
     </div>
+
+    <div class="mcard photos"></div>
 
     <div><a class="btn btn--navy" href="#inquiry" data-fmt="종일형 (조합)">이 프로그램 문의</a></div>
   </div>
@@ -2059,6 +2067,22 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       "<p class=\"cap\" style=\"color:var(--mood-title);opacity:.7\">"+pr.cap+"</p>";
     flash(card);
   }
+
+  /* ── 과정별 현장 사진 — 칩을 누르면 '현장 사진' 카드가 그 과정 사진으로 바뀐다 ── */
+  var PH_CAP = {"ph-01": "MBTI 주기능·열등기능 해석", "ph-02": "MBTI 유형별 특징 강의", "ph-03": "유형별 그룹 활동", "ph-04": "MBTI 라벨을 붙인 맞춤 향수", "ph-05": "완성한 향수와 MBTI 카드", "ph-06": "MBTI 소통 힐링 워크숍 (호텔 연회장)", "ph-07": "셀프진단 강의 전경", "ph-08": "컬러링 코드로 성향 비교", "ph-09": "노트북 실습 — 각자 화면에서 바로 따라 합니다", "ph-10": "막히는 자리를 바로 봐 드립니다", "ph-11": "프롬프트 설계 강의", "ph-12": "AI 챗봇 자동화 워크숍", "ph-13": "브랜딩 아이스브레이킹 카드", "ph-14": "스레드 콘텐츠 기획 파트 (공동 강의)", "ph-15": "그러데이션으로 완성한 하늘", "ph-16": "드로잉 개별 지도", "ph-17": "오일파스텔과 레퍼런스 사진", "ph-18": "완성한 아로마 디퓨저", "ph-19": "디퓨저 블렌딩", "ph-20": "아로마 오일 20종", "ph-21": "향 계량·블렌딩", "ph-22": "완성한 컬러 센트 향수", "ph-23": "향 노트 시향 테이블", "ph-24": "완성한 하바리움 플라워펜", "ph-25": "채움 컬러로 만든 펜", "ph-26": "펜 제작 실습", "ph-27": "종일 연수 컬러 진단 세팅", "webapp-01": "자체 웹앱으로 셀프진단 — 각자 스마트폰으로 진단", "case-11": "교육연수원 종일 연수", "case-12": "1박 2일 연수 파트 · 100명 연회장", "case-04": "컬러 센트 향수 블렌딩", "game-01": "컬러 카드로 자기소개", "game-02": "조별 진행 · 질문 카드로 대화", "game-03": "레인보우 프리즘 말판"};
+  var PHOTOS = {"_personality": {"k": "성격유형진단 현장", "l": ["webapp-01", "ph-02", "ph-07"], "c": "국립완주문화유산연구소 · 한국표준협회 · 경기도인재개발원 현장입니다."}, "_healing": {"k": "명상·힐링 현장", "l": ["ph-15", "ph-18", "ph-20"], "c": "서울시교육청 교육연수원 · 아로마 클래스 현장입니다."}, "_craft": {"k": "아트테라피 현장", "l": ["ph-22", "ph-24", "ph-18"], "c": "실제 수업에서 만든 제작물입니다."}, "_game": {"k": "레인보우 프리즘 진행 장면", "l": ["game-01", "game-02", "game-03"], "c": "서울시교육청 교육연수원 힐링테라피 연수 현장입니다. 교구는 자체 기획·제작·유통합니다."}, "_ai": {"k": "AI 실습 현장", "l": ["ph-09", "ph-11", "ph-10"], "c": "노트북 실습형으로 진행합니다. 10명부터 보조 강사가 함께합니다."}, "_fullday": {"k": "종일·연수 현장", "l": ["case-11", "case-12", "game-03"], "c": "서울시교육청 교육연수원 종일 연수 · 늘봄지원실장 1박 2일 연수 현장입니다."}, "PSN-101": {"k": "MBTI 팀 커뮤니케이션", "l": ["ph-01", "ph-02", "ph-06"], "c": "한국표준협회 · 서울시교육청 늘봄지원실장 연수 현장입니다."}, "PSN-102": {"k": "자체 웹앱 셀프진단 진행 장면", "l": ["webapp-01", "ph-08", "ph-07"], "c": "국립완주문화유산연구소 · 경기도인재개발원 현장입니다. 웹앱 진단은 센터가 직접 개발해 운영합니다."}, "PSN-201": {"k": "MBTI 맞춤 향수", "l": ["ph-04", "ph-05", "ph-03"], "c": "한국표준협회 3회 특강 현장입니다. 완성한 향수에 MBTI 라벨을 붙여 가져갑니다."}, "HLG-101": {"k": "컬러 심리 진단", "l": ["ph-07", "ph-08"], "c": "경기도인재개발원 셀프 진단 컬러테라피 현장입니다."}, "HLG-102": {"k": "오일파스텔 힐링 드로잉", "l": ["ph-15", "ph-16", "ph-17"], "c": "서울시교육청 교육연수원 힐링테라피 연수 현장입니다."}, "HLG-201": {"k": "아로마 조향", "l": ["ph-20", "ph-21", "ph-23"], "c": "아로마 오일 20종을 시향하고 직접 계량해 블렌딩합니다."}, "HLG-202": {"k": "아로마 호흡 힐링 · 디퓨저 제작", "l": ["ph-18", "ph-19", "ph-20"], "c": "소형 아로마 디퓨저를 만들어 개별 케이스에 담아 갑니다."}, "ART-101": {"k": "컬러 센트 향수", "l": ["ph-22", "ph-23", "case-04"], "c": "한국수력원자력 방사선보건원 · 컬러센트 클래스 현장입니다."}, "ART-102": {"k": "아로마 디퓨저", "l": ["ph-18", "ph-19"], "c": "소형 아로마 디퓨저 · 개별 케이스 포장."}, "ART-103": {"k": "하바리움 플라워펜", "l": ["ph-24", "ph-25", "ph-26"], "c": "경기도인재개발원 · 강원 노인맞춤돌봄서비스 연수 현장입니다."}, "GME-101": {"k": "레인보우 프리즘 진행 장면", "l": ["game-01", "game-02", "game-03"], "c": "서울시교육청 교육연수원 힐링테라피 연수 현장입니다. 교구는 자체 기획·제작·유통합니다."}, "AIW-101": {"k": "생성형 AI 실무 활용", "l": ["ph-09", "ph-10", "ph-11"], "c": "참가자가 실제로 쓰는 문서로 프롬프트를 만듭니다."}, "AIW-102": {"k": "Canva · NotebookLM 활용", "l": ["ph-09", "ph-10"], "c": "노트북 실습형. Canva·Claude·Gemini PPT ZOOM 강의를 1·2기 진행했습니다."}, "AIW-201": {"k": "업무 자동화", "l": ["ph-10", "ph-09", "ph-11"], "c": "반복 업무를 가져와 현장에서 자동화 1건을 만듭니다."}, "AIW-301": {"k": "콘텐츠 마케팅 · 브랜딩", "l": ["ph-12", "ph-13", "ph-14"], "c": "브랜드 블로그 AI 챗봇 워크숍(강남) · 보험설계사 SNS 전략 강의 현장입니다."}, "FDY-101": {"k": "종일 조합 워크숍", "l": ["case-11", "ph-27", "game-01"], "c": "서울시교육청 교육연수원 힐링테라피 연수(09~17시) 현장입니다."}, "FDY-102": {"k": "반일 조합", "l": ["case-11", "ph-27"], "c": "진단·소통 세션에 선택 활동 1종을 붙인 구성입니다."}, "FDY-201": {"k": "다회차 · 다교실 운영", "l": ["case-11", "case-12"], "c": "회차·교실을 나눠 같은 구성으로 진행합니다."}, "FDY-301": {"k": "1박 2일 연수 파트", "l": ["case-12", "ph-06", "ph-05"], "c": "서울시교육청 늘봄지원실장 1박 2일 연수(양평, 100명) 현장입니다."}};
+  function photoCard(ph){
+    var figs = ph.l.map(function(id){ return '<figure class="item item--wide"><img src="assets/'+id+'.jpg" alt="'+(PH_CAP[id]||'')+'" loading="lazy"><figcaption>'+(PH_CAP[id]||'')+'</figcaption></figure>'; }).join("");
+    return '<h3>현장 사진 <span class="code">'+ph.k+'</span></h3><div class="items items--3">'+figs+'</div><p class="cap" style="color:var(--mood-title);opacity:.7">'+ph.c+'</p>';
+  }
+  function renderPhotos(panel, code){
+    var card = panel.querySelector(".mcard.photos"); if(!card) return;
+    var key = (code && PHOTOS[code]) ? code : "_"+panel.id.replace("panel-","");
+    var ph = PHOTOS[key]; if(!ph) return;
+    card.innerHTML = photoCard(ph);
+    if(code) flash(card);
+  }
+  document.querySelectorAll(".panel").forEach(function(panel){ renderPhotos(panel, null); });
   function currRow(r){ return '<tr><td class="t">'+r[0]+'</td><td>'+r[1]+'</td><td class="m">'+r[2]+'</td></tr>'; }
   function renderCurr(panel, code){
     var card = panel.querySelector(".mcard .curr"); if(!card) return;
@@ -2090,7 +2114,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
         e.preventDefault();
         var wasOpen = a.classList.contains("is-open");
         links.forEach(function(x){ x.classList.remove("is-open"); x.setAttribute("aria-expanded","false"); });
-        if(wasOpen){ deck.hidden = true; renderCurr(a.closest(".panel"), null); renderEff(a.closest(".panel"), null); renderPrice(a.closest(".panel"), null); return; }
+        if(wasOpen){ deck.hidden = true; renderCurr(a.closest(".panel"), null); renderEff(a.closest(".panel"), null); renderPrice(a.closest(".panel"), null); renderPhotos(a.closest(".panel"), null); return; }
         a.classList.add("is-open"); a.setAttribute("aria-expanded","true");
         var name = a.dataset.course, code = name.split(" ")[0];
         var c = COURSES[code] || {t:name.slice(code.length+1), d:"", m:"", r:""};
@@ -2109,6 +2133,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
         renderCurr(panel, code);
         renderEff(panel, code);
         renderPrice(panel, code);
+        renderPhotos(panel, code);
       });
     });
   });
