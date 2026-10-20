@@ -355,6 +355,8 @@ img{max-width:100%;display:block}
 .cdeck__m{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:var(--mood-title)}
 .cdeck__m i{font-style:normal;color:var(--mood-accent);font-weight:600;margin-right:6px;font-size:12px}
 .cdeck .btn{align-self:flex-start;margin-top:4px}
+.cdeck__hint{font-size:12.5px;color:var(--mood-title);opacity:.7;line-height:1.6}
+.course-row{display:flex;gap:8px;align-items:stretch}.course-row input{flex:1;min-width:0}.course-row .btn{flex:none;white-space:nowrap}
 .mcols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 /* 제작물 썸네일 */
 .items{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -1660,8 +1662,11 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
           <p class="cap" style="margin-top:2px">시작가는 최소 인원 기준입니다. 인원·재료 구성에 따라 달라지며, 정확한 금액은 견적서로 보내드립니다.</p>
         </div>
 
-        <div class="f f--full"><label for="course">관심 과정 <span style="font-weight:400;color:var(--muted)">(선택)</span></label>
-          <input id="course" name="관심과정" type="text" placeholder="프로그램 상세에서 과정 이름을 누르면 자동으로 채워집니다">
+        <div class="f f--full"><label for="course">관심 과정 <span style="font-weight:400;color:var(--muted)">(선택 · 여러 개 조합 가능)</span></label>
+          <div class="course-row">
+            <input id="course" name="관심과정" type="text" placeholder="프로그램 상세에서 과정을 누르면 여기에 담깁니다 · 예) PSN-101 + ART-101">
+            <button type="button" id="courseClear" class="btn btn--outline btn--sm">비우기</button>
+          </div>
         </div>
         <div class="f f--full"><label for="budget">예상 예산</label>
           <select id="budget" name="예상예산">
@@ -1959,8 +1964,14 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
   /* 칩 클릭 → 같은 패널의 미리보기 카드에 펼치기. 다시 누르면 닫힘 */
   function pickCourse(name, key){
     if(MOOD[key]) choose(fmtRadios, MOOD[key].name, "fmtChips");
-    if(courseInput){ courseInput.value = name; flash(courseInput.closest(".f")); }
+    if(!courseInput) return;
+    var cur = courseInput.value.split(/\s*\+\s*/).map(function(x){ return x.trim(); }).filter(Boolean);
+    if(cur.indexOf(name) === -1) cur.push(name);
+    courseInput.value = cur.join(" + ");
+    flash(courseInput.closest(".f"));
   }
+  var courseClear = document.getElementById("courseClear");
+  if(courseClear) courseClear.addEventListener("click", function(){ if(courseInput){ courseInput.value = ""; courseInput.focus(); } });
   document.querySelectorAll(".pills").forEach(function(pills){
     var deck = pills.nextElementSibling;
     if(!deck || !deck.classList.contains("cdeck")) return;
@@ -1983,7 +1994,8 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
             (c.m ? '<span><i>구성</i>'+c.m+'</span>' : '') +
             (c.r ? '<span><i>결과물</i>'+c.r+'</span>' : '') +
           '</div>' +
-          '<a class="btn btn--navy btn--sm" href="#inquiry">이 과정으로 문의</a>';
+          '<a class="btn btn--navy btn--sm" href="#inquiry">이 과정 담아 문의하기</a>' +
+          '<span class="cdeck__hint">여러 과정을 담으면 조합 구성으로 견적해 드립니다. 예) MBTI 정식검사 + 컬러 센트 향수</span>';
         deck.hidden = false;
         deck.querySelector("a.btn").addEventListener("click", function(){ pickCourse(name, key); });
         renderCurr(panel, code);
