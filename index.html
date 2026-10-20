@@ -1384,8 +1384,8 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       <p>제작물 재료비(1인당, 구성별 차등) · 21명부터 보조 강사(10명당 1인) · 출장비(수도권 5~8만원 · 원거리 10만원~)<br><span style="color:var(--muted)">AI 과정은 실습 기반이라 10명부터 보조 강사가 필수입니다.</span></p>
     </div>
     <div class="note">
-      <b>견적이 달라지는 요인</b>
-      <p>① 재료 구성 ② 참여 인원(반 수) ③ 진단 방식 ④ 진행 지역 ⑤ 진행 시간</p>
+      <b>견적 기준 요인</b>
+      <p>① 재료 구성<br>② 참여 인원(반 수)<br>③ 진단 방식<br>④ 진행 지역<br>⑤ 진행 시간</p>
     </div>
   </div>
 
@@ -1825,7 +1825,7 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
     rows.forEach(function(r){ var v = fieldText(r[1]); if(v) out.push(r[0]+": "+v); });
     return out.join("\n");
   }
-  function showCopy(kind, text){ if(!copyMsg) return; copyMsg.hidden = false; copyMsg.className = "cap formmsg " + kind; copyMsg.textContent = text; }
+  function showCopy(kind, text){ if(!copyMsg) return; copyMsg.hidden = false; copyMsg.className = "cap formmsg formmsg--" + kind; copyMsg.textContent = text; }
   if(copyBtn) copyBtn.addEventListener("click", function(){
     var org = document.getElementById("org");
     if(org && !org.value.trim()){
