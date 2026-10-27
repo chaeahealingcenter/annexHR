@@ -8,7 +8,7 @@
  * 설치
  *   1. 구글 드라이브에서 새 스프레드시트를 하나 만듭니다.
  *   2. 확장 프로그램 → Apps Script → 이 파일 내용을 전부 붙여넣습니다.
- *   3. 아래 NOTIFY_TO 를 받을 주소로 바꿉니다.
+ *   3. 아래 NOTIFY_TO 를 확인합니다 (채아 워크스페이스 계정 + 아넥스 주소, 둘 다 수신).
  *   4. 배포 → 새 배포 → 유형 "웹 앱"
  *        실행 계정: 나
  *        액세스 권한: 모든 사용자            ← 반드시 이것
@@ -17,7 +17,7 @@
  * 비용 0원. 하루 메일 100통까지 (일반 Gmail 계정 기준).
  */
 
-var NOTIFY_TO = 'annexhredu@gmail.com';   // ← 문의를 받을 주소
+var NOTIFY_TO = 'chaeahealingcenter@gmail.com, annexhredu@gmail.com';   // ← 문의를 받을 주소 (쉼표로 여러 개)
 var SHEET_NAME = '문의';
 
 function doPost(e) {

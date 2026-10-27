@@ -30,7 +30,7 @@ Vercel에 폴더째 드래그하거나 GitHub 연동 후 Deploy. Framework Prese
 | 찾을 문자열 | 바꿀 내용 |
 |---|---|
 | `YOUR_SCRIPT_ID` | Apps Script 웹앱 주소 — 아래 2-1절 |
-| `privacy.html`의 `2026-00-00` | 개인정보처리방침 시행일 |
+| ~~`privacy.html`의 `2026-00-00`~~ | **완료** — 시행일 2026-10-27, 수탁자 표에서 Formspree 삭제(Apps Script·Sheets로 대체) |
 
 > 네이버 톡톡(`talk.naver.com/profile/w4m5ao`)은 입력 완료. 외부 플랫폼 후기 링크는 넣지 않기로 하여 블록 자체를 삭제했습니다.
 
@@ -42,7 +42,7 @@ Vercel에 폴더째 드래그하거나 GitHub 연동 후 Deploy. Framework Prese
 
 1. 구글 드라이브에서 **새 스프레드시트** 생성
 2. **확장 프로그램 → Apps Script** → `scripts/form-handler.gs` 내용을 전부 붙여넣기
-3. 맨 위 `NOTIFY_TO` 를 받을 주소로 수정 (기본값 `annexhredu@gmail.com`)
+3. 맨 위 `NOTIFY_TO` 확인 — 기본값이 `chaeahealingcenter@gmail.com, annexhredu@gmail.com` (둘 다 수신, 대표 결정). **스프레드시트와 Apps Script는 워크스페이스를 쓰는 채아 계정(chaeahealingcenter@gmail.com)으로 만드세요** — 실행 계정이 메일 발신자가 됩니다.
 4. **배포 → 새 배포 → 유형: 웹 앱**
    - 실행 계정: **나**
    - 액세스 권한: **모든 사용자** ← 이게 아니면 폼이 안 됩니다
