@@ -2302,9 +2302,12 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
       if(msgEl) msgEl.hidden = true;
 
       /* Apps Script 웹앱은 302 리다이렉트를 거치므로 CORS 프리플라이트가 걸리지 않도록
-         FormData 그대로 보낸다(커스텀 헤더 금지). 응답 본문은 읽지 않아도 되므로
-         no-cors 로 보내고, 네트워크 자체가 실패할 때만 오류로 처리한다. */
-      fetch(form.action, { method:"POST", mode:"no-cors", body:new FormData(form) })
+         커스텀 헤더 없이 application/x-www-form-urlencoded 로 보낸다(Apps Script가 e.parameter 로
+         가장 확실하게 받는 형식). 응답 본문은 읽지 않아도 되므로 no-cors 로 보내고,
+         네트워크 자체가 실패할 때만 오류로 처리한다. */
+      var body = new URLSearchParams();
+      new FormData(form).forEach(function(v, k){ body.append(k, v); });
+      fetch(form.action, { method:"POST", mode:"no-cors", body:body })
         .then(function(){
           form.reset(); paintChips();
           showMsg("ok", "문의가 접수되었습니다. 영업일 기준 2일 이내에 담당자가 연락드리겠습니다.");
