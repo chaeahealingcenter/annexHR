@@ -7,7 +7,9 @@ annexhr/
 ├── index.html          ← 사이트 전체 (HTML + CSS + JS)
 ├── privacy.html        ← 개인정보처리방침 (/privacy)
 ├── scripts/form-handler.gs  ← 문의 폼 수신 (Google Apps Script)
-├── vercel.json         ← 배포 설정 (캐시·보안 헤더)
+├── CNAME               ← GitHub Pages 커스텀 도메인 (annexhr.co.kr)
+├── .nojekyll           ← GitHub Pages에서 Jekyll 처리 끄기
+├── 404.html            ← 없는 주소 안내 페이지
 ├── robots.txt          ← 검색엔진 수집 (네이버 Yeti 포함)
 ├── sitemap.xml
 └── assets/ (favicon.svg · og-image.png)
@@ -15,11 +17,25 @@ annexhr/
 
 ---
 
-## 1. 배포
+## 1. 배포 — GitHub Pages (대표 결정 2026.10.30, Vercel 안 씀)
 
-Vercel에 폴더째 드래그하거나 GitHub 연동 후 Deploy. Framework Preset은 **Other**, Build Command는 **비워둡니다**.
+저장소 **Settings → Pages** → Build and deployment: **Deploy from a branch** → Branch **main** / **/(root)** → Save. 1~2분 뒤 `https://chaeahealingcenter.github.io/annexHR/` 에서 확인.
 
-도메인 `annexhr.co.kr` 연결 시 `@` A 레코드 `76.76.21.21`, `www` CNAME은 Vercel 화면 값. canonical·OG·robots·sitemap이 이미 그 도메인 기준입니다.
+- 저장소가 **Public**이어야 무료 플랜에서 Pages가 켜집니다 (Private이면 Settings → General 맨 아래 Change visibility).
+- `CNAME` 파일(`annexhr.co.kr`)이 저장소에 있어 Pages 설정의 Custom domain 칸이 자동으로 채워집니다. 비어 있으면 직접 입력 → Save.
+- DNS가 잡히면 **Enforce HTTPS** 체크.
+
+**호스팅.kr DNS** (도메인 관리 → DNS 관리):
+
+| 유형 | 호스트 | 값 |
+|---|---|---|
+| A | @ | `185.199.108.153` |
+| A | @ | `185.199.109.153` |
+| A | @ | `185.199.110.153` |
+| A | @ | `185.199.111.153` |
+| CNAME | www | `chaeahealingcenter.github.io` |
+
+기존 `@`/`www` 파킹 레코드는 삭제. canonical·OG·robots·sitemap은 이미 `annexhr.co.kr` 기준이고, Pages는 `/privacy` 같은 확장자 없는 주소 규칙이 없어 링크를 `/privacy.html`로 바꿨습니다. `vercel.json`(캐시·보안 헤더)은 삭제 — Pages는 헤더 설정을 지원하지 않습니다.
 
 ---
 
