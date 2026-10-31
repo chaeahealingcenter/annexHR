@@ -19,6 +19,8 @@ annexhr/
 
 ## 1. 배포 — GitHub Pages (대표 결정 2026.10.30, Vercel 안 씀)
 
+> **상태 (2026.10.31)**: Pages 활성(main / root), 문의 폼 Apps Script 연결·실전 테스트 완료, 네이버 소유확인 메타 태그 삽입, 호스팅.kr DNS 입력 완료(대표). 사이트 주소 https://annexhr.co.kr — 수정은 작업 브랜치 → `main` 푸시 후 1~2분 뒤 자동 반영.
+
 저장소 **Settings → Pages** → Build and deployment: **Deploy from a branch** → Branch **main** / **/(root)** → Save. 1~2분 뒤 `https://chaeahealingcenter.github.io/annexHR/` 에서 확인.
 
 - 저장소가 **Public**이어야 무료 플랜에서 Pages가 켜집니다 (Private이면 Settings → General 맨 아래 Change visibility).
