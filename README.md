@@ -19,6 +19,8 @@ annexhr/
 
 ## 1. 배포 — GitHub Pages (대표 결정 2026.10.30, Vercel 안 씀)
 
+> **방문 통계 (2026.11.14)**: 네이버 애널리틱스 연결(`wcs_add["wa"]`, `index.html` 맨 아래). 통계는 analytics.naver.com 에서 확인. 개인정보처리방침 9조·수탁자 표 개정 완료.
+>
 > **상태 (2026.10.31)**: Pages 활성(main / root), 문의 폼 Apps Script 연결·실전 테스트 완료, 네이버 소유확인 메타 태그 삽입, 호스팅.kr DNS 입력 완료(대표). 사이트 주소 https://annexhr.co.kr — 수정은 작업 브랜치 → `main` 푸시 후 1~2분 뒤 자동 반영.
 
 저장소 **Settings → Pages** → Build and deployment: **Deploy from a branch** → Branch **main** / **/(root)** → Save. 1~2분 뒤 `https://chaeahealingcenter.github.io/annexHR/` 에서 확인.
