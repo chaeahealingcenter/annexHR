@@ -208,6 +208,11 @@ td.per{color:var(--teal);font-weight:600}
 .fixbar .fixbar__talk{background:#03C75A;border-color:#03C75A;color:#fff}
 @media (max-width:760px){.fab{display:none}.fixbar{grid-template-columns:1fr 1fr 1.5fr!important}}
 @media (prefers-reduced-motion:reduce){.fab{transition:none}}
+.dl{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;background:#fff;border:1px solid var(--line-strong);border-radius:var(--radius);padding:18px 22px}
+.dl__tx{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1 1 320px}
+.dl__tx b{font-size:16px;font-weight:600;color:var(--navy)}
+.dl__tx span{font-size:14.5px;color:var(--muted);line-height:1.7}
+.dl .btn{flex:none}
 /* 모바일 하단 고정 */
 .fixbar{display:none}
 @media (max-width:760px){
@@ -363,6 +368,10 @@ td.per{color:var(--teal);font-weight:600}
   </ul>
   <p class="fit"><b>기관 예산 맞춤 진행 가능</b>정해진 예산이 있으면 먼저 알려 주세요. 재료비 조정 등으로 그 안에서 맞춥니다.</p>
   <div><a class="btn btn--navy" href="#inquiry">이 금액으로 견적서 받기</a></div>
+  <div class="dl">
+    <div class="dl__tx"><b>보고·품의용 소개서 (PDF 2쪽)</b><span>아넥스HR교육원의 전체 프로그램 6종과 시작가, 출강 실적, 진행 절차를 두 쪽에 담았습니다. 연락처를 남기지 않아도 바로 받으실 수 있습니다.</span></div>
+    <a class="btn btn--outline btn--sm" href="/annexhr-brochure.pdf" download="아넥스HR교육원_기업교육_소개서.pdf">소개서 PDF 받기</a>
+  </div>
 </div></section>
 
 <section class="sec" id="visit"><div class="wrap stack g24">
