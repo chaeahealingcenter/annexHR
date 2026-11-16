@@ -491,6 +491,19 @@ img{max-width:100%;display:block}
 button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
 
 /* ── 하단 고정 CTA (모바일) ── */
+/* 빠른 연락: PC는 오른쪽 아래 떠 있는 버튼 3개, 폰은 하단 고정 바 */
+.fab{position:fixed;right:20px;bottom:20px;z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:8px;
+  opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1)}
+.fab.on{opacity:1;transform:none;pointer-events:auto}
+.fab a{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;font-size:14.5px;font-weight:600;
+  box-shadow:0 4px 14px rgba(20,30,50,.18);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.fab a:hover{transform:translateY(-2px)}
+.fab__talk{background:#03C75A;color:#fff}
+.fab__tel{background:#fff;color:#22314B;border:1px solid #D2D7DE}
+.fab__ask{background:#22314B;color:#fff}
+.fixbar .fixbar__talk{background:#03C75A;border-color:#03C75A;color:#fff}
+@media (max-width:760px){.fab{display:none}.fixbar{grid-template-columns:1fr 1fr 1.5fr!important}}
+@media (prefers-reduced-motion:reduce){.fab{transition:none}}
 .fixbar{display:none}
 @media (max-width:760px){
   .fixbar{
@@ -1940,8 +1953,14 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
 </div></footer>
 
 <!-- ══ 모바일 고정 CTA ══ -->
+<div class="fab" id="fab" aria-label="빠른 연락">
+  <a class="fab__talk" href="https://talk.naver.com/profile/w4m5ao" target="_blank" rel="noopener">네이버 톡톡</a>
+  <a class="fab__tel" href="tel:050714317305">전화 0507-1431-7305</a>
+  <a class="fab__ask" href="#inquiry">빠른 문의</a>
+</div>
 <div class="fixbar">
-  <a class="btn btn--outline" href="tel:050714317305">전화 상담</a>
+  <a class="btn btn--outline" href="tel:050714317305">전화</a>
+  <a class="btn fixbar__talk" href="https://talk.naver.com/profile/w4m5ao" target="_blank" rel="noopener">톡톡</a>
   <a class="btn btn--navy" href="#inquiry">교육 문의하기</a>
 </div>
 
@@ -2374,6 +2393,19 @@ button.talk{width:100%;border:0;cursor:pointer;font-family:inherit}
         });
     });
   }
+
+  /* 빠른 연락 버튼: 첫 화면을 지나면 나타나고, 문의 폼이 보이면 숨는다 */
+  (function(){
+    var fab = document.getElementById("fab"), inq = document.getElementById("inquiry");
+    if(!fab) return;
+    var near = false, tick = false;
+    function upd(){ tick = false; fab.classList.toggle("on", window.scrollY > 520 && !near); }
+    if("IntersectionObserver" in window && inq){
+      new IntersectionObserver(function(es){ near = es[0].isIntersecting; upd(); }, {rootMargin:"0px 0px -15% 0px"}).observe(inq);
+    }
+    window.addEventListener("scroll", function(){ if(!tick){ tick = true; requestAnimationFrame(upd); } }, {passive:true});
+    upd();
+  })();
 
   /* ── 연도 ── */
   var yr = document.getElementById("yr");
